@@ -1,0 +1,465 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.parent-stepper {
+  margin-top: 2rem !important;
+}
+
+.parent-step-content {
+  margin-left: 3rem;
+}
+
+.css-14yr603-MuiStepContent-root {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-left: none !important;
+}
+
+.css-smkl36-MuiCollapse-wrapper {
+  display: flex !important;
+  width: 124% !important;
+}
+
+.row > * {
+  flex-shrink: 0 !important;
+  /* max-width: 98% !important; */
+}
+
+.css-18k87ye-MuiTypography-root {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  margin-top: 15px !important;
+}
+
+.css-pwngrv-MuiPaper-root-MuiCard-root {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  overflow: hidden;
+  width: 50% !important;
+  margin-left: 29rem !important;
+  margin-bottom: 5rem !important;
+  border: 2px solid darkgray;
+}
+
+.css-46bh2p-MuiCardContent-root {
+  padding: 16px !important;
+  margin-top: 2rem;
+}
+
+.inner-buttons {
+  display: flex;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  overflow: hidden;
+  height: 12rem !important;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.home > img {
+  width: 100%;
+}
+
+.image-header {
+  font-size: 53px;
+  font-weight: 600;
+  position: absolute;
+  top: 15rem;
+  left: 33px;
+}
+
+.button-contactus {
+  border: 2px solid black;
+  background-color: #ffc800;
+  border-radius: 35px;
+  position: absolute;
+  top: 31rem;
+  left: 33px;
+  font-size: 18px;
+  padding: 18px;
+  width: 14rem;
+  font-weight: 600;
+}
+
+.content-1 {
+  font-size: 33px;
+  padding: 31px 31px 41px 2px;
+  font-family: fangsong;
+}
+
+.network-sol {
+  font-family: revert;
+  font-weight: 600;
+  margin-left: 3rem;
+}
+
+.sub-elem {
+  margin-left: 3rem;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.border-black-Ethernet {
+  border-bottom: 3px solid black;
+  width: 5.6rem;
+}
+
+.border-black-internet {
+  border-bottom: 3px solid black;
+  width: 5rem;
+}
+
+.border-black-broadband {
+  border-bottom: 3px solid black;
+  width: 7rem;
+}
+
+.border-black-fiber {
+  border-bottom: 3px solid black;
+  width: 6.5rem;
+}
+
+.border-black-line {
+  border-bottom: 3px solid black;
+  width: 7.5rem;
+}
+
+p {
+  margin-left: 3rem;
+  font-size: 19px;
+}
+
+.border-yellow {
+  margin-top: 3rem;
+  border-bottom: 15px solid #ffc800;
+  width: 7rem;
+}
+
+.border-orange {
+  margin-top: 3rem;
+  border-bottom: 15px solid #fa783c;
+  width: 7rem;
+}
+
+.voice-sol {
+  margin-top: 5rem;
+  font-family: revert;
+  font-weight: 600;
+  margin-left: 3rem;
+}
+
+.border-black-local {
+  border-bottom: 3px solid black;
+  width: 13rem;
+}
+
+.border-black-long {
+  border-bottom: 3px solid black;
+  width: 15.2rem;
+}
+
+.border-black-international {
+  border-bottom: 3px solid black;
+  width: 8.1rem;
+}
+
+.border-black-e911 {
+  border-bottom: 3px solid black;
+  width: 2.9rem;
+}
+
+.border-black-direct {
+  border-bottom: 3px solid black;
+  width: 19.1rem;
+}
+
+.border-black-line_voulume {
+  border-bottom: 3px solid black;
+  width: 11rem;
+}
+
+.choose-brightspeed {
+  margin-top: 5rem;
+  background-color: #ffc800;
+  padding: 2.5rem;
+  margin-bottom: 5rem;
+}
+/* /////////////////////////////////////////////////// */
+.why-h1 {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.why-p {
+  color: black;
+  padding: 0rem 13rem 0rem 0rem;
+}
+
+.brightspeed-sub {
+  font-weight: 700;
+  margin-left: 3rem;
+}
+
+.brightspeed-sub-right {
+  padding-right: 4rem;
+}
+
+.logo-social {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  /* margin: 5px; */
+}
+
+.header-list {
+  font-weight: 800;
+  font-size: 19px;
+  font-family: inherit;
+}
+
+.list-customers {
+  list-style: none;
+}
+
+li {
+  margin-top: 18px;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.img-brightspeed {
+  margin-top: 24px;
+}
+
+.follow-us {
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.rights-content {
+  margin-top: 4rem;
+  margin-left: -3rem;
+}
+
+.font-size-copyright {
+  font-size: 16px;
+}
+
+.about-brightspeed {
+  margin-bottom: 5rem;
+}
+
+.logo-header {
+  margin-left: 4rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black !important;
+  margin: 1rem;
+  font-size: 17px !important;
+}
+
+.MuiAppBar-colorPrimary {
+  color: black;
+  background-color: white !important;
+}
+
+.border-botton-navbar {
+  border-bottom: 2px solid rgb(165, 163, 163);
+}
+
+.nav-link {
+  display: block !important;
+  color: black !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+
+.gradiant-image {
+  width: 100%;
+  height: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+/* .wholesale {
+  border: 1px solid #eee;
+}
+
+.wholesale > ul {
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.wholesale:hover > ul {
+  visibility: visible;
+  opacity: 1;
+} */
+
+.wholesale {
+  padding: 2rem;
+  margin-left: 7rem;
+}
+
+.hide {
+  display: none;
+  margin-left: 10rem;
+  margin-top: 0rem;
+  transition-duration: 3s, 5s;
+  font-size: 16px;
+  background-color: rgb(246, 234, 234);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.myDIV {
+  list-style: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: black;
+}
+
+.list-items-voip {
+  margin-left: 2rem;
+  list-style: none;
+}
+
+/* ////////////////////////////////////////// */
+.makeStyles-navlinks-1 {
+  display: flex;
+  margin-left: auto !important;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 124%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:focus {
+  outline: 0;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background: linear-gradient(to left, #fa783c, #ffc800);
+  color: black;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  background: linear-gradient(to right, #fa783c, #ffc800);
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item-title {
+  font-size: 27px;
+  font-weight: bold;
+  color: #fff;
+  font-family: system-ui;
+  letter-spacing: 1.7px;
+}
+
+.voip-product {
+  font-family: revert;
+  font-weight: 600;
+  margin-left: 7rem;
+  margin-top: 2rem;
+}
+
+.list-item-backside {
+  font-size: 20px;
+  color: #fff;
+  font-family: system-ui;
+}

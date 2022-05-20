@@ -1,0 +1,25 @@
+.mid-card {
+    padding: 0;
+}
+
+.title {
+    margin: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.card-text {
+    margin-bottom: 20px;
+}
+
+.content a {
+    color: black;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.item {
+    margin-bottom: 1rem;
+}
