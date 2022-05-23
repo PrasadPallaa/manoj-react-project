@@ -1,9 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, CssBaseline, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
-// import image from "../images/Branding/logos_2/horizontal-photo-mock-up-computer-laptop-coffee-cup-plant-wooden-office-desk-210524413.jpg";
-
-import image from "../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098561/RF_GettyImages-1359098561_Purchased 2.11.png"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +40,7 @@ function NavbarBottom() {
         </Toolbar>
       </AppBar>
       <p className="border-botton-navbar"></p>
-      <img alt="img" src={image} className='img-enterprise'/>
+      <div className="img-social-1"></div>
 
     </React.Fragment>
   );

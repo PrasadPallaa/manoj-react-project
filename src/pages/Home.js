@@ -7,7 +7,7 @@ import brspdlogo from "../images/Branding/01 Logo/Logo/Full Color/Digital/Bright
 import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
-import image from "../images/Branding/logos_2/horizontal-photo-mock-up-computer-laptop-coffee-cup-plant-wooden-office-desk-210524413.jpg";
+// import image from "../images/Branding/logos_2/horizontal-photo-mock-up-computer-laptop-coffee-cup-plant-wooden-office-desk-210524413.jpg";
 import { Link } from "react-router-dom";
 
 
@@ -47,8 +47,7 @@ const Home = () => {
           </div>
           <button className="button-contactus">Contact Us</button>
 
-        <img alt="img" src={image} />
-
+        <div className="img-home"></div>
         <p className="content-1">
           At Brightspeed, we're invested in bringing fast, reliable products and
           services to your communities, because they're our communities, too.
