@@ -8,6 +8,8 @@ import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
 import image from "../images/Branding/logos_2/horizontal-photo-mock-up-computer-laptop-coffee-cup-plant-wooden-office-desk-210524413.jpg";
+import { Link } from "react-router-dom";
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -123,7 +125,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={4}>
             <p className="border-orange"></p>
-            <h3 className="sub-elem">Long Distance Toll-Free</h3>
+            <Link to="/ew/wholesale/voice" className="route-text-dec-none"><h3 className="sub-elem">Wholesale Voice</h3></Link>
             <p className="border-black-long"></p>
 
             <p>
@@ -132,7 +134,8 @@ const Home = () => {
           </Grid>
           <Grid item xs={4}>
             <p className="border-orange"></p>
-            <h3 className="sub-elem">International</h3>
+            <Link to="/ew/enterprise/voice" className="route-text-dec-none"><h3 className="sub-elem">Enterprise Voice</h3></Link>
+            
             <p className="border-black-international"></p>
 
             <p>

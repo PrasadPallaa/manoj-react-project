@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MidEnterprise from "./pages/MidEnterprise";
 import Navbar from "./components/navbar";
 import WholeSale from './components/wholesale/wholesale'
+import Voice from './components/enterprise/voice'
 
 
 export default function App() {
@@ -24,7 +25,8 @@ export default function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="companyheader" element={<CompanyHeader />} />
-          <Route path="ew/enterprise/voice" element={<Enterprisevoice />} />
+          <Route path="ew/enterprise" element={<Enterprisevoice />} />
+          <Route path="ew/enterprise/voice" element={<Voice />} />
           <Route path="ew/wholesale/voice" element={<WholeSale />} />
           <Route path="mid-enterprise" element={<MidEnterprise />} />
           <Route path="products" element={<Productctlg />} />

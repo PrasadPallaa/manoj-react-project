@@ -2,8 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import NavbarBottom from '../bottom-navbar';
 
-
-const WholeSale = () => {
+const Voice = () => {
   return (
     <React.Fragment>
       <NavbarBottom />
@@ -19,8 +18,8 @@ const WholeSale = () => {
                 </div>
                 <div class="flip-card-back">
                   <h3 className="list-item-backside">
-                    Securely link data centers, clouds, offices, VPNs and
-                     LANs with dedicated  connections
+                    Securely link data centers, clouds, offices, VPNs and LANs
+                    with dedicated connections
                   </h3>
                 </div>
               </div>
@@ -33,10 +32,10 @@ const WholeSale = () => {
                   <h3 className="list-item-title">SIP Trunk</h3>
                 </div>
                 <div class="flip-card-back">
-                    <h3 className="list-item-backside">
-                    Securely link data centers, clouds, offices, VPNs and
-                     LANs with dedicated  connections
-                    </h3>
+                  <h3 className="list-item-backside">
+                    Securely link data centers, clouds, offices, VPNs and LANs
+                    with dedicated connections
+                  </h3>
                 </div>
               </div>
             </div>
@@ -48,10 +47,10 @@ const WholeSale = () => {
                   <h3 className="list-item-title">Business Lines</h3>
                 </div>
                 <div class="flip-card-back">
-                    <h3 className="list-item-backside">
-                    Securely link data centers, clouds, offices, VPNs and
-                     LANs with dedicated  connections
-                    </h3>
+                  <h3 className="list-item-backside">
+                    Securely link data centers, clouds, offices, VPNs and LANs
+                    with dedicated connections
+                  </h3>
                 </div>
               </div>
             </div>
@@ -62,4 +61,4 @@ const WholeSale = () => {
   );
 };
 
-export default WholeSale;
+export default Voice;
