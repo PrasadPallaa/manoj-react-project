@@ -122,7 +122,7 @@
 }
 
 .button-contactus {
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: #ffc800;
   border-radius: 35px;
   position: absolute;
@@ -131,12 +131,26 @@
   font-size: 18px;
   padding: 18px;
   width: 14rem;
-  font-weight: 600;
+  /* font-weight: 600; */
+}
+
+.button-contactus:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: #282c34;
+  border-radius: 35px;
+  position: absolute;
+  top: 31rem;
+  left: 33px;
+  font-size: 18px;
+  padding: 18px;
+  width: 14rem;
+  /* font-weight: 600; */
 }
 
 .content-1 {
   font-size: 33px;
-  padding: 31px 31px 41px 2px;
+  padding: 31px 31px 41px 88px;
   font-family: fangsong;
 }
 
@@ -155,43 +169,55 @@
 .border-black-Ethernet {
   border-bottom: 3px solid black;
   width: 5.6rem;
+  margin-left: 3rem;
 }
 
 .border-black-internet {
   border-bottom: 3px solid black;
   width: 5rem;
+  margin-left: 3rem;
 }
 
 .border-black-broadband {
   border-bottom: 3px solid black;
   width: 7rem;
+  margin-left: 3rem;
 }
 
 .border-black-fiber {
   border-bottom: 3px solid black;
   width: 6.5rem;
+  margin-left: 3rem;
 }
 
 .border-black-line {
   border-bottom: 3px solid black;
   width: 7.5rem;
+  margin-left: 3rem;
 }
 
-p {
+.margin-and-size-p {
   margin-left: 3rem;
   font-size: 19px;
 }
+
+/* p {
+  margin-left: 3rem;
+  font-size: 19px;
+} */
 
 .border-yellow {
   margin-top: 3rem;
   border-bottom: 15px solid #ffc800;
   width: 7rem;
+  margin-left: 3rem;
 }
 
 .border-orange {
   margin-top: 3rem;
   border-bottom: 15px solid #fa783c;
   width: 7rem;
+  margin-left: 3rem;
 }
 
 .voice-sol {
@@ -204,31 +230,37 @@ p {
 .border-black-local {
   border-bottom: 3px solid black;
   width: 13rem;
+  margin-left: 3rem;
 }
 
 .border-black-long {
   border-bottom: 3px solid black;
   width: 10.5rem;
+  margin-left: 3rem;
 }
 
 .border-black-international {
   border-bottom: 3px solid black;
   width: 10.5rem;
+  margin-left: 3rem;
 }
 
 .border-black-e911 {
   border-bottom: 3px solid black;
   width: 2.9rem;
+  margin-left: 3rem;
 }
 
 .border-black-direct {
   border-bottom: 3px solid black;
   width: 19.1rem;
+  margin-left: 3rem;
 }
 
 .border-black-line_voulume {
   border-bottom: 3px solid black;
   width: 11rem;
+  margin-left: 3rem;
 }
 
 .choose-brightspeed {
@@ -354,6 +386,7 @@ li {
 .wholesale {
   padding: 2rem;
   margin-left: 7rem;
+  padding-bottom: 11rem;
 }
 
 .hide {
@@ -533,3 +566,36 @@ li {
   color: #282c34;
 }
 
+.speakToSales {
+  padding: 8rem;
+  background-color: #ffc800;
+}
+
+.speakToSales-title  {
+  display: flex;
+  justify-content: center;
+}
+
+.speakToSales-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.request-info {
+  margin-top: 4rem;
+}
+
+.quote-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.req-info-title {
+  font-family: system-ui;
+  font-size: 40px;
+}
+
+.req-info-subtitle {
+  font-size: 16px !important;
+}

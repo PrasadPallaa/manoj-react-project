@@ -1,13 +1,17 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import NavbarBottom from '../bottom-navbar';
+import RequestInfo from "../enterprise/requestInfo";
+
 
 const Voice = () => {
   return (
     <React.Fragment>
       <NavbarBottom />
       <h1 className="voip-product">VOIP Products</h1>
-      <p className="voip-services">Find services that fit your business needs</p>
+      <p className="voip-services">
+        Find services that fit your business needs
+      </p>
       <div className="wholesale">
         <Grid container spacing={2} className="flex-items">
           <Grid item xs={4}>
@@ -56,6 +60,15 @@ const Voice = () => {
             </div>
           </Grid>
         </Grid>
+      </div>
+
+      <div className="speakToSales">
+        <h2 className="speakToSales-title">Speak to a Sales Rep</h2>
+        <h5 className="speakToSales-contact">+19159969739</h5>
+      </div>
+
+      <div id="request-info">
+      <RequestInfo />
       </div>
     </React.Fragment>
   );

@@ -35,7 +35,9 @@ function NavbarBottom() {
               Talk to a sales representative <br />
               +19159969739
             </Link>
-              <button className="contactus">Contact Us</button>
+             <a href="#request-info">
+             <button className="contactus">Contact Us</button>
+               </a> 
           </div>
         </Toolbar>
       </AppBar>

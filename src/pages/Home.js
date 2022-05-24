@@ -7,7 +7,6 @@ import brspdlogo from "../images/Branding/01 Logo/Logo/Full Color/Digital/Bright
 import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
-// import image from "../images/Branding/logos_2/horizontal-photo-mock-up-computer-laptop-coffee-cup-plant-wooden-office-desk-210524413.jpg";
 import { Link } from "react-router-dom";
 
 
@@ -66,7 +65,7 @@ const Home = () => {
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Ethernet</h3>
             <p className="border-black-Ethernet"></p>
-            <p>
+            <p className="margin-and-size-p">
               Securely link data centers, <br /> cluds, offices, VPNs and <br />{" "}
               LANs with dedicated <br /> connections
             </p>
@@ -76,7 +75,7 @@ const Home = () => {
             <h3 className="sub-elem">Internet</h3>
             <p className="border-black-internet"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Reliably deliver applications <br /> and data using our high <br /> performing and secure <br /> network
             </p>
           </Grid>
@@ -85,7 +84,7 @@ const Home = () => {
             <h3 className="sub-elem">Broadband</h3>
             <p className="border-black-broadband"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Faster data transmission over <br /> copper, bonded copper or <br />fiber technologies
             </p>
           </Grid>
@@ -95,7 +94,7 @@ const Home = () => {
             <h3 className="sub-elem">Dark Fiber</h3>
             <p className="border-black-fiber"></p>
 
-            <p>
+            <p className="margin-and-size-p">
              Deliver quick payback while<br /> keeping costs under control <br /> with dedicated bandwidth
             </p>
           </Grid>
@@ -104,7 +103,7 @@ const Home = () => {
             <h3 className="sub-elem">Private Line</h3>
             <p className="border-black-line"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Reliable, secure and <br />dedicated point-to-point<br /> connectivity for voice and<br /> data traffic
             </p>
           </Grid>
@@ -118,7 +117,7 @@ const Home = () => {
             <p className="border-orange"></p>
             <h3 className="sub-elem">Local Voice Services</h3>
             <p className="border-black-local"></p>
-            <p>
+            <p className="margin-and-size-p">
               Traditional phone and <br /> trunking services
             </p>
           </Grid>
@@ -127,7 +126,7 @@ const Home = () => {
             <Link to="/ew/wholesale/voice" className="route-text-dec-none"><h3 className="sub-elem">Wholesale Voice</h3></Link>
             <p className="border-black-long"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Cost-effective, scalable phone <br /> services and routing
             </p>
           </Grid>
@@ -137,7 +136,7 @@ const Home = () => {
             
             <p className="border-black-international"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Reliable,high-performance <br /> international connections, <br /> completions and voice quality
             </p>
           </Grid>
@@ -147,7 +146,7 @@ const Home = () => {
             <h3 className="sub-elem">e911</h3>
             <p className="border-black-e911"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Route end-users calls to an <br /> emergency service bureau or <br />the Public Safety Answering <br /> Point (PSAP)
             </p>
           </Grid>
@@ -156,7 +155,7 @@ const Home = () => {
             <h3 className="sub-elem">Direct Inward Dial PBX Trunks</h3>
             <p className="border-black-direct"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Give customers the ability to <br />directly dial a specific <br /> extension on your PBX system
             </p>
           </Grid>
@@ -165,7 +164,7 @@ const Home = () => {
             <h3 className="sub-elem">Line Volume plan</h3>
             <p className="border-black-line_voulume"></p>
 
-            <p>
+            <p className="margin-and-size-p">
               Lock in a competitive and <br /> consistent rate for local <br /> calling services
             </p>
           </Grid>
