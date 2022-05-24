@@ -6,6 +6,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const top100Films = [
   { label: "The Shawshank Redemption", year: 1994 },
@@ -135,9 +136,9 @@ const top100Films = [
   { label: "Monty Python and the Holy Grail", year: 1975 },
 ];
 
-const options = ["Option 1", "Option 2"];
-const options1 = ["Option 1", "Option 2"];
-const options2 = ["Option 1", "Option 2"];
+const options = ["Service 1", "Service 2", "Service 3"];
+const options1 = ["Yes", "No"];
+const options2 = ["Email", "Phone"];
 
 const RequestInfo = () => {
   const [value, setValue] = React.useState(options[0]);
@@ -154,6 +155,10 @@ const RequestInfo = () => {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+
+  function onChange(value) {
+    console.log('Captcha value:', value);
+  }
 
   return (
     <div className="request-info container">
@@ -266,7 +271,13 @@ const RequestInfo = () => {
           )}
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox checked={checked} onChange={handleChange} inputProps={{ 'aria-label': 'controlled' }}/>}
+              control={
+                <Checkbox
+                  checked={checked}
+                  onChange={handleChange}
+                  inputProps={{ "aria-label": "controlled" }}
+                />
+              }
               label="Is existing customer ?"
             />
           </FormGroup>
@@ -289,8 +300,11 @@ const RequestInfo = () => {
             />
           </FormGroup>
         </Grid>
+        <Grid item xs={12}>
+          <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} />
+        </Grid>
         <Grid item xs={12} className="quote-button">
-          <Button variant="contained">Quote</Button>
+          <Button className="quote-button-quote">Quote</Button>
         </Grid>
         <Grid item xs={12} className="quote-button">
           <p>We are commited to protect your privacy</p>
