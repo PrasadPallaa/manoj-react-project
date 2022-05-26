@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { useNavigate } from 'react-router-dom';
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -33,20 +30,15 @@ function NavbarBottom() {
 
   function handleClickHome(event) {
     event.preventDefault();
-    navigate('/');
+    navigate("/");
   }
 
   function handleClickEnterprise(event) {
     event.preventDefault();
-    navigate('/ew/enterprise');
+    navigate("/ew/enterprise");
   }
   const breadcrumbs = [
-    <Link
-      key="1"
-      color="inherit"
-      to="/"
-      onClick={handleClickHome}
-    >
+    <Link key="1" color="inherit" to="/" onClick={handleClickHome}>
       Home
     </Link>,
     <Link
@@ -85,6 +77,14 @@ function NavbarBottom() {
         </Toolbar>
       </AppBar>
       <p className="border-botton-navbar"></p>
+      <div className="image-header">
+      Internet equals <br /> opportunity.
+      </div>
+      <h2 className="image-sub-header">
+        Get ready for a new choice in Internet <br />
+        that offers the speed, simplicity, and reliability<br />
+        you need to accomplish what’s important.
+        </h2>
       <div className="img-social-1"></div>
     </React.Fragment>
   );
