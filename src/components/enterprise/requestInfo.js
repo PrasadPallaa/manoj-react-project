@@ -307,7 +307,7 @@ const RequestInfo = () => {
           <Button className="quote-button-quote">Quote</Button>
         </Grid>
         <Grid item xs={12} className="quote-button">
-          <p>We are commited to protect your privacy</p>
+          <p>We are commited to protect your <a href="https://www.zdnet.com/article/best-browser-for-privacy/" target="_blank">privacy</a> </p>
         </Grid>
       </Grid>
     </div>

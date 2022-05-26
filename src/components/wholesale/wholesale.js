@@ -70,7 +70,7 @@ const WholeSale = () => {
 
 
       <div className="speakToSales">
-        <h2 className="speakToSales-title">Speak to a Sales Rep</h2>
+        <h2 className="speakToSales-title">Talk to sales Agent</h2>
         <h5 className="speakToSales-contact">+19159969739</h5>
       </div>
 
