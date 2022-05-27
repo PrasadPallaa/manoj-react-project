@@ -670,3 +670,35 @@ a {
   color: rgba(0, 0, 0, 0.87) !important;
   font-size: 17px;
 }
+
+.brightspeed-list-items {
+  padding: 5rem;
+}
+
+.want-to-know-more-heading {
+  font-weight: 800;
+
+}
+
+.want-to-know-more-content {
+  font-size: 19px;
+}
+
+.brightspeed-list-style {
+  list-style: none;
+}
+
+.brightspeed-list-style-li {
+  border-bottom: 2px solid black;
+  padding: 9px;
+  font-size: 20px;
+}
+
+.brightspeed-list-style-li:hover {
+  cursor: pointer;
+}
+
+.brightspeed-list-li-content {
+  padding: 3rem 0 3rem 0;
+  font-size: 16px;
+}
