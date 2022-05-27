@@ -11,6 +11,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import SendIcon from "@mui/icons-material/Send";
+import DownArrow from "../../images/Branding/logos_2/980c46c6-cb9f-47d8-b27b-f3401c5fb813.png";
 
 const Voice = () => {
   const [open1, setOpen1] = React.useState(true);
@@ -224,7 +225,6 @@ const Voice = () => {
       </div>
 
       <hr className="horizontal-line" />
-
       <Grid container spacing={2} className="brightspeed-list-items">
         <Grid item xs={5}>
           <h1 className="want-to-know-more-heading">Want to know more?</h1>
@@ -239,8 +239,16 @@ const Voice = () => {
               className="brightspeed-list-style-li"
               onClick={handleClickBrightspeedList1}
             >
-              Who is Brightspeed?
+              Who is Brightspeed?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
+
             {brightspeedlist1 ? (
               <p className="brightspeed-list-li-content">
                 Who is Brightspeed? Our company exists because we believe that
@@ -271,8 +279,18 @@ const Voice = () => {
             ) : (
               ""
             )}
-            <li className="brightspeed-list-style-li" onClick={handleClickBrightspeedList2}>
-              Why is Brightspeed importtant to me?
+            <li
+              className="brightspeed-list-style-li"
+              onClick={handleClickBrightspeedList2}
+            >
+              Why is Brightspeed importtant to me?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
             {brightspeedlist2 ? (
               <p className="brightspeed-list-li-content">
@@ -304,8 +322,18 @@ const Voice = () => {
             ) : (
               ""
             )}
-            <li className="brightspeed-list-style-li" onClick={handleClickBrightspeedList3}>
-              Why is fiber optics so much better?
+            <li
+              className="brightspeed-list-style-li"
+              onClick={handleClickBrightspeedList3}
+            >
+              Why is fiber optics so much better?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
             {brightspeedlist3 ? (
               <p className="brightspeed-list-li-content">
@@ -337,8 +365,18 @@ const Voice = () => {
             ) : (
               ""
             )}
-            <li className="brightspeed-list-style-li" onClick={handleClickBrightspeedList4}>
-              When can i sign up for Brightspeed Internet?
+            <li
+              className="brightspeed-list-style-li"
+              onClick={handleClickBrightspeedList4}
+            >
+              When can i sign up for Brightspeed Internet?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
             {brightspeedlist4 ? (
               <p className="brightspeed-list-li-content">
@@ -370,8 +408,18 @@ const Voice = () => {
             ) : (
               ""
             )}
-            <li className="brightspeed-list-style-li" onClick={handleClickBrightspeedList5}>
-              How can i learn about job opportunities with Brightspeed?
+            <li
+              className="brightspeed-list-style-li"
+              onClick={handleClickBrightspeedList5}
+            >
+              How can i learn about job opportunities with Brightspeed?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
             {brightspeedlist5 ? (
               <p className="brightspeed-list-li-content">
@@ -403,8 +451,18 @@ const Voice = () => {
             ) : (
               ""
             )}
-            <li className="brightspeed-list-style-li" onClick={handleClickBrightspeedList6}>
-              Where is Brightspeed's headquarters?
+            <li
+              className="brightspeed-list-style-li"
+              onClick={handleClickBrightspeedList6}
+            >
+              Where is Brightspeed's headquarters?{" "}
+              <span>
+                <img
+                  alt="down-arrow"
+                  src={DownArrow}
+                  className="down-arrow-align"
+                />
+              </span>
             </li>
             {brightspeedlist6 ? (
               <p className="brightspeed-list-li-content">

@@ -702,3 +702,8 @@ a {
   padding: 3rem 0 3rem 0;
   font-size: 16px;
 }
+
+.down-arrow-align {
+  float: right;
+  margin-top: 1rem;
+}
