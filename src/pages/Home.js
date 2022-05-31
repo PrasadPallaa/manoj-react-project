@@ -7,7 +7,6 @@ import brspdlogo from "../images/Branding/01 Logo/Logo/Full Color/Digital/Bright
 import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
-import { Link } from "react-router-dom";
 
 
 function TabPanel(props) {
@@ -123,7 +122,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={4}>
             <p className="border-orange"></p>
-            <Link to="/ew/wholesale/voice" className="route-text-dec-none"><h3 className="sub-elem">Wholesale Voice</h3></Link>
+           <a href="/ew/wholesale/voice" className="route-text-dec-none"><h3 className="sub-elem">Wholesale Voice</h3></a>
             <p className="border-black-long"></p>
 
             <p className="margin-and-size-p">
@@ -132,7 +131,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={4}>
             <p className="border-orange"></p>
-            <Link to="/ew/enterprise/voice" className="route-text-dec-none"><h3 className="sub-elem">Enterprise Voice</h3></Link>
+            <a href="/ew/enterprise/voice" className="route-text-dec-none"> <h3 className="sub-elem">Enterprise Voice</h3></a> 
             
             <p className="border-black-international"></p>
 

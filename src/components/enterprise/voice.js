@@ -12,6 +12,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import SendIcon from "@mui/icons-material/Send";
 import DownArrow from "../../images/Branding/logos_2/980c46c6-cb9f-47d8-b27b-f3401c5fb813.png";
+import brightSpeedImage from "../../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098766/RF_GettyImages-1359098766_Purchased 2.11.png"
+
 
 const Voice = () => {
   const [open1, setOpen1] = React.useState(true);
@@ -97,7 +99,7 @@ const Voice = () => {
   return (
     <React.Fragment>
       <NavbarBottom />
-      <h1 className="voip-product">VOIP Products</h1>
+      <h1 id="voice-and-voip" className="voip-product">VOIP Products</h1>
       <p className="voip-services">
         Find services that fit your business needs
       </p>
@@ -227,11 +229,13 @@ const Voice = () => {
       <hr className="horizontal-line" />
       <Grid container spacing={2} className="brightspeed-list-items">
         <Grid item xs={5}>
-          <h1 className="want-to-know-more-heading">Want to know more?</h1>
+          {/* <h1 className="want-to-know-more-heading">Want to know more?</h1>
           <p className="want-to-know-more-content">
             Learn more about Brightspeed with the help of these questions and
             answers.
-          </p>
+          </p> */}
+                    <img alt="bright-speed-list" src={brightSpeedImage} className="bright-speed-image-list" />
+
         </Grid>
         <Grid item xs={7}>
           <ul className="brightspeed-list-style">

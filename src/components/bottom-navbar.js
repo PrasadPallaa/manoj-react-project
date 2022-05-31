@@ -2,7 +2,6 @@ import React from "react";
 import { AppBar, Toolbar, CssBaseline, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Typography from "@mui/material/Typography";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +36,7 @@ function NavbarBottom() {
     event.preventDefault();
     navigate("/ew/enterprise");
   }
+
   const breadcrumbs = [
     <Link key="1" color="inherit" to="/" onClick={handleClickHome}>
       Home
@@ -49,9 +49,9 @@ function NavbarBottom() {
     >
       Enterprise
     </Link>,
-    <Typography key="3" color="text.primary">
-      Voice and VoIP
-    </Typography>,
+    <a href="#voice-and-voip">
+      <strong>Voice and VoIP</strong>
+    </a>
   ];
 
   return (
@@ -78,13 +78,14 @@ function NavbarBottom() {
       </AppBar>
       <p className="border-botton-navbar"></p>
       <div className="image-header">
-      Internet equals <br /> opportunity.
+        Internet equals <br /> opportunity.
       </div>
       <h2 className="image-sub-header">
         Get ready for a new choice in Internet <br />
-        that offers the speed, simplicity, and reliability<br />
+        that offers the speed, simplicity, and reliability
+        <br />
         you need to accomplish what’s important.
-        </h2>
+      </h2>
       <div className="img-social-1"></div>
     </React.Fragment>
   );
