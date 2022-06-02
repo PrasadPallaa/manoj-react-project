@@ -98,7 +98,7 @@ const WholeSale = () => {
   return (
     <React.Fragment>
       <NavbarBottom />
-      <h1 id="voice-and-voip" className="voip-product">VOIP Products</h1>
+      <h1 id="voice-and-voip" className="voip-product">VoIP Products</h1>
       <p className="voip-services">
         Find services that fit your business needs
       </p>
@@ -112,14 +112,14 @@ const WholeSale = () => {
             onClick={handleClick1}
             className={open1 ? "bcc-selected" : ""}
           >
-            <ListItemIcon>{open1 ? <SendIcon /> : ""}</ListItemIcon>
+            {/* <ListItemIcon>{open1 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText primary={open1 ? <strong>BCC</strong> : "BCC"} />
           </ListItemButton>
           <ListItemButton
             onClick={handleClick2}
             className={open2 ? "bcc-selected" : ""}
           >
-            <ListItemIcon>{open2 ? <SendIcon /> : ""}</ListItemIcon>
+            {/* <ListItemIcon>{open2 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText
               primary={open2 ? <strong>SIP Trunk</strong> : "SIP Trunk"}
             />
@@ -128,7 +128,7 @@ const WholeSale = () => {
             onClick={handleClick3}
             className={open3 ? "bcc-selected" : ""}
           >
-            <ListItemIcon>{open3 ? <SendIcon /> : ""}</ListItemIcon>
+            {/* <ListItemIcon>{open3 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText
               primary={
                 open3 ? <strong>Business Lines</strong> : "Business Lines"

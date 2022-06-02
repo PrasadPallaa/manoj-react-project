@@ -1285,12 +1285,17 @@ li {
   margin-top: 5rem; */
 }
 
+.privacy {
+  color: #0d6efd !important;
+}
+
 .quote-button-quote {
   padding: 1.2rem !important;
   border-radius: 35px !important;
   width: 150px !important;
   color: black !important;
   background-color: #fa783c !important;
+  text-transform: none !important;
 }
 
 .css-1ri6ub7-MuiPaper-root-MuiCard-root {
@@ -1335,7 +1340,7 @@ li {
 } */
 
 .bcc-selected {
-  background-color: #e9ecef !important;
+  background-color: #ffc800 !important;
 }
 
 .css-4pdmu4-MuiBreadcrumbs-ol {

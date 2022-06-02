@@ -1,163 +1,77 @@
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
-import Autocomplete from "@mui/material/Autocomplete";
-import * as React from "react";
+import React, { useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useTheme } from "@mui/material/styles";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import FormHelperText from "@mui/material/FormHelperText";
 
-const top100Films = [
-  { label: "The Shawshank Redemption", year: 1994 },
-  { label: "The Godfather", year: 1972 },
-  { label: "The Godfather: Part II", year: 1974 },
-  { label: "The Dark Knight", year: 2008 },
-  { label: "12 Angry Men", year: 1957 },
-  { label: "Schindler's List", year: 1993 },
-  { label: "Pulp Fiction", year: 1994 },
-  {
-    label: "The Lord of the Rings: The Return of the King",
-    year: 2003,
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
   },
-  { label: "The Good, the Bad and the Ugly", year: 1966 },
-  { label: "Fight Club", year: 1999 },
-  {
-    label: "The Lord of the Rings: The Fellowship of the Ring",
-    year: 2001,
-  },
-  {
-    label: "Star Wars: Episode V - The Empire Strikes Back",
-    year: 1980,
-  },
-  { label: "Forrest Gump", year: 1994 },
-  { label: "Inception", year: 2010 },
-  {
-    label: "The Lord of the Rings: The Two Towers",
-    year: 2002,
-  },
-  { label: "One Flew Over the Cuckoo's Nest", year: 1975 },
-  { label: "Goodfellas", year: 1990 },
-  { label: "The Matrix", year: 1999 },
-  { label: "Seven Samurai", year: 1954 },
-  {
-    label: "Star Wars: Episode IV - A New Hope",
-    year: 1977,
-  },
-  { label: "City of God", year: 2002 },
-  { label: "Se7en", year: 1995 },
-  { label: "The Silence of the Lambs", year: 1991 },
-  { label: "It's a Wonderful Life", year: 1946 },
-  { label: "Life Is Beautiful", year: 1997 },
-  { label: "The Usual Suspects", year: 1995 },
-  { label: "Léon: The Professional", year: 1994 },
-  { label: "Spirited Away", year: 2001 },
-  { label: "Saving Private Ryan", year: 1998 },
-  { label: "Once Upon a Time in the West", year: 1968 },
-  { label: "American History X", year: 1998 },
-  { label: "Interstellar", year: 2014 },
-  { label: "Casablanca", year: 1942 },
-  { label: "City Lights", year: 1931 },
-  { label: "Psycho", year: 1960 },
-  { label: "The Green Mile", year: 1999 },
-  { label: "The Intouchables", year: 2011 },
-  { label: "Modern Times", year: 1936 },
-  { label: "Raiders of the Lost Ark", year: 1981 },
-  { label: "Rear Window", year: 1954 },
-  { label: "The Pianist", year: 2002 },
-  { label: "The Departed", year: 2006 },
-  { label: "Terminator 2: Judgment Day", year: 1991 },
-  { label: "Back to the Future", year: 1985 },
-  { label: "Whiplash", year: 2014 },
-  { label: "Gladiator", year: 2000 },
-  { label: "Memento", year: 2000 },
-  { label: "The Prestige", year: 2006 },
-  { label: "The Lion King", year: 1994 },
-  { label: "Apocalypse Now", year: 1979 },
-  { label: "Alien", year: 1979 },
-  { label: "Sunset Boulevard", year: 1950 },
-  {
-    label:
-      "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-    year: 1964,
-  },
-  { label: "The Great Dictator", year: 1940 },
-  { label: "Cinema Paradiso", year: 1988 },
-  { label: "The Lives of Others", year: 2006 },
-  { label: "Grave of the Fireflies", year: 1988 },
-  { label: "Paths of Glory", year: 1957 },
-  { label: "Django Unchained", year: 2012 },
-  { label: "The Shining", year: 1980 },
-  { label: "WALL·E", year: 2008 },
-  { label: "American Beauty", year: 1999 },
-  { label: "The Dark Knight Rises", year: 2012 },
-  { label: "Princess Mononoke", year: 1997 },
-  { label: "Aliens", year: 1986 },
-  { label: "Oldboy", year: 2003 },
-  { label: "Once Upon a Time in America", year: 1984 },
-  { label: "Witness for the Prosecution", year: 1957 },
-  { label: "Das Boot", year: 1981 },
-  { label: "Citizen Kane", year: 1941 },
-  { label: "North by Northwest", year: 1959 },
-  { label: "Vertigo", year: 1958 },
-  {
-    label: "Star Wars: Episode VI - Return of the Jedi",
-    year: 1983,
-  },
-  { label: "Reservoir Dogs", year: 1992 },
-  { label: "Braveheart", year: 1995 },
-  { label: "M", year: 1931 },
-  { label: "Requiem for a Dream", year: 2000 },
-  { label: "Amélie", year: 2001 },
-  { label: "A Clockwork Orange", year: 1971 },
-  { label: "Like Stars on Earth", year: 2007 },
-  { label: "Taxi Driver", year: 1976 },
-  { label: "Lawrence of Arabia", year: 1962 },
-  { label: "Double Indemnity", year: 1944 },
-  {
-    label: "Eternal Sunshine of the Spotless Mind",
-    year: 2004,
-  },
-  { label: "Amadeus", year: 1984 },
-  { label: "To Kill a Mockingbird", year: 1962 },
-  { label: "Toy Story 3", year: 2010 },
-  { label: "Logan", year: 2017 },
-  { label: "Full Metal Jacket", year: 1987 },
-  { label: "Dangal", year: 2016 },
-  { label: "The Sting", year: 1973 },
-  { label: "2001: A Space Odyssey", year: 1968 },
-  { label: "Singin' in the Rain", year: 1952 },
-  { label: "Toy Story", year: 1995 },
-  { label: "Bicycle Thieves", year: 1948 },
-  { label: "The Kid", year: 1921 },
-  { label: "Inglourious Basterds", year: 2009 },
-  { label: "Snatch", year: 2000 },
-  { label: "3 Idiots", year: 2009 },
-  { label: "Monty Python and the Holy Grail", year: 1975 },
-];
+};
 
-const options = ["Service 1", "Service 2", "Service 3"];
-const options1 = ["Yes", "No"];
-const options2 = ["Email", "Phone"];
+const names = ["Service 1", "Service 2", "Service 3"];
+
+const servicePlanData = ["Yes", "No"];
+
+const contactInfo = ["Email", "Phone"];
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 const RequestInfo = () => {
-  const [value, setValue] = React.useState(options[0]);
-  const [inputValue, setInputValue] = React.useState("");
-
-  const [value1, setValue1] = React.useState(options1[0]);
-  const [inputValue1, setInputValue1] = React.useState("");
-
-  const [value2, setValue2] = React.useState(options2[0]);
-  const [inputValue2, setInputValue2] = React.useState("");
-
   const [checked, setChecked] = React.useState(false);
+  const theme = useTheme();
+  const [personName, setPersonName] = React.useState([]);
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [address, setAddress] = useState();
+  const [stateValue, setStateValue] = useState();
+  const [zip, setZip] = useState();
+  const [email, setEmail] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [companyName, setCompanyName] = useState();
+  const [servicePlan, setServicePlan] = useState(["Service 1"]);
+  const [noOfUsers, setNoOfUser] = useState();
+  const [internetService, setInternetService] = useState(["Yes"]);
+  const [contactAgent, setContactAgent] = useState(["Email"]);
+
+  // const handleChange1 = (event) => {
+  //   const {
+  //     target: { value },
+  //   } = event;
+  //   setPersonName(
+  //     typeof value === "string" ? value.split(",") : value
+  //   );
+  // };
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
 
   function onChange(value) {
-    console.log('Captcha value:', value);
+    console.log("Captcha value:", value);
   }
 
   return (
@@ -169,105 +83,221 @@ const RequestInfo = () => {
       </p>
       <Grid container spacing={2}>
         <Grid item xs={6}>
-          <TextField fullWidth label="First name" id="firstName" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField fullWidth label="Last name" id="lastName" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField fullWidth label="Address" id="address" />
-        </Grid>
-        <Grid item xs={6}>
-          <Autocomplete
-            disablePortal
-            id="combo-box-demo"
-            options={top100Films}
+          <TextField
+            required
             fullWidth
-            renderInput={(params) => <TextField {...params} label="State" />}
+            label="First name"
+            id="firstName"
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
+            error={firstName === ""}
+            helperText={firstName === "" ? "This field is required!" : " "}
           />
         </Grid>
         <Grid item xs={6}>
-          <TextField fullWidth label="Zip/Postal Code" id="zip" />
+          <TextField
+            required
+            fullWidth
+            label="Last name"
+            id="lastName"
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            error={lastName === ""}
+            helperText={lastName === "" ? "This field is required!" : " "}
+          />
         </Grid>
         <Grid item xs={6}>
-          <TextField fullWidth label="Email" id="email" />
+          <TextField
+            required
+            fullWidth
+            label="Address"
+            id="address"
+            value={address}
+            onChange={(event) => setAddress(event.target.value)}
+            error={address === ""}
+            helperText={address === "" ? "This field is required!" : " "}
+          />
         </Grid>
         <Grid item xs={6}>
-          <TextField fullWidth label="Phone Number" id="phoneNumber" />
+          <TextField
+            required
+            fullWidth
+            label="State"
+            id="state"
+            value={stateValue}
+            onChange={(event) => setStateValue(event.target.value)}
+            error={stateValue === ""}
+            helperText={stateValue === "" ? "This field is required!" : " "}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            required
+            fullWidth
+            label="Zip/Postal Code"
+            id="zip"
+            value={zip}
+            onChange={(event) => setZip(event.target.value)}
+            error={zip === ""}
+            helperText={zip === "" ? "This field is required!" : " "}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            required
+            fullWidth
+            label="Email"
+            id="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            error={email === ""}
+            helperText={email === "" ? "This field is required!" : " "}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            required
+            fullWidth
+            label="Phone Number"
+            id="phoneNumber"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
+            error={phoneNumber === ""}
+            helperText={phoneNumber === "" ? "This field is required!" : " "}
+          />
         </Grid>
         <Grid item xs={6}>
           <TextField
             fullWidth
+            required
             label="Company/Organization Name"
             id="companyName"
+            value={companyName}
+            onChange={(event) => setCompanyName(event.target.value)}
+            error={companyName === ""}
+            helperText={companyName === "" ? "This field is required!" : " "}
           />
         </Grid>
         <Grid item xs={6}>
-          <Autocomplete
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            inputValue={inputValue}
-            onInputChange={(event, newInputValue) => {
-              setInputValue(newInputValue);
-            }}
-            id="controllable-states-demo"
-            options={options}
-            fullWidth
-            renderInput={(params) => (
-              <TextField {...params} label="Service Plan" />
+          <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
+            <InputLabel id="demo-multiple-name-label">
+              Service Plan *
+            </InputLabel>
+            <Select
+              labelId="demo-multiple-name-label"
+              id="demo-multiple-name"
+              required
+              multiple
+              // onChange={handleChange1}
+              input={<OutlinedInput label="Service Plan" />}
+              MenuProps={MenuProps}
+              value={servicePlan}
+              onChange={(event) => {
+                setServicePlan(event.target.value);
+              }}
+            >
+              {names.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+            {servicePlan.length === 0 ? (
+              <FormHelperText>This field is required!</FormHelperText>
+            ) : (
+              ""
             )}
-          />
+          </FormControl>
         </Grid>
         <Grid item xs={6}>
-          <TextField fullWidth label="Number of users" id="users" />
-        </Grid>
-        <Grid item xs={6}>
-          <Autocomplete
-            value={value1}
-            onChange={(event, newValue) => {
-              setValue1(newValue);
-            }}
-            inputValue={inputValue1}
-            onInputChange={(event, newInputValue) => {
-              setInputValue1(newInputValue);
-            }}
-            id="controllable-states-demo-1"
-            options={options1}
+          <TextField
+            required
             fullWidth
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Do you currently have internet service ?"
-              />
-            )}
+            label="Number of users"
+            id="users"
+            value={noOfUsers}
+            onChange={(event) => setNoOfUser(event.target.value)}
+            error={noOfUsers === ""}
+            helperText={noOfUsers === "" ? "This field is required!" : " "}
           />
+        </Grid>
+        <Grid item xs={6}>
+          <FormControl sx={{ width: 640 }} error={internetService.length === 0}>
+            <InputLabel id="demo-multiple-name-label">
+              Do you currently have internet service ? *
+            </InputLabel>
+            <Select
+              labelId="demo-multiple-name-label"
+              id="demo-multiple-name"
+              required
+              input={
+                <OutlinedInput label="Do you currently have internet service ? *" />
+              }
+              MenuProps={MenuProps}
+              value={internetService}
+              onChange={(event) => {
+                setInternetService(event.target.value);
+              }}
+            >
+              {servicePlanData.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+            {internetService.length === 0 ? (
+              <FormHelperText>This field is required!</FormHelperText>
+            ) : (
+              ""
+            )}
+          </FormControl>
         </Grid>
 
         <Grid item xs={6}>
           {!checked ? (
-            <Autocomplete
-              value={value2}
-              onChange={(event, newValue) => {
-                setValue2(newValue);
-              }}
-              inputValue={inputValue2}
-              onInputChange={(event, newInputValue) => {
-                setInputValue2(newInputValue);
-              }}
-              id="controllable-states-demo-1"
-              options={options2}
-              fullWidth
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="How would you like our sales agent to contact you ?"
-                />
+            <FormControl sx={{ width: 640 }} error={contactAgent.length === 0}>
+              <InputLabel id="demo-multiple-name-label">
+                How would you like our sales agent to contact you ? *
+              </InputLabel>
+              <Select
+                labelId="demo-multiple-name-label"
+                id="demo-multiple-name"
+                required
+                input={
+                  <OutlinedInput label="How would you like our sales agent to contact you ? *" />
+                }
+                MenuProps={MenuProps}
+                value={contactAgent}
+                onChange={(event) => {
+                  setContactAgent(event.target.value);
+                }}
+              >
+                {contactInfo.map((name) => (
+                  <MenuItem
+                    key={name}
+                    value={name}
+                    style={getStyles(name, personName, theme)}
+                  >
+                    {name}
+                  </MenuItem>
+                ))}
+              </Select>
+              {contactAgent.length === 0 ? (
+                <FormHelperText>This field is required!</FormHelperText>
+              ) : (
+                ""
               )}
-            />
+            </FormControl>
           ) : (
-            <TextField fullWidth label="BAN" id="ban" />
+            <TextField required fullWidth label="BAN" id="ban" type="number" />
           )}
           <FormGroup>
             <FormControlLabel
@@ -301,13 +331,25 @@ const RequestInfo = () => {
           </FormGroup>
         </Grid>
         <Grid item xs={12}>
-          <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} />
+          <ReCAPTCHA
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            onChange={onChange}
+          />
         </Grid>
         <Grid item xs={12} className="quote-button">
-          <Button className="quote-button-quote">Quote</Button>
+          <Button className="quote-button-quote">Submit Info</Button>
         </Grid>
         <Grid item xs={12} className="quote-button">
-          <p>We are commited to protect your <a href="https://www.zdnet.com/article/best-browser-for-privacy/" target="_blank">privacy</a> </p>
+          <p>
+            We are commited to protect your{" "}
+            <a
+              className="privacy"
+              href="https://www.zdnet.com/article/best-browser-for-privacy/"
+              target="_blank"
+            >
+              privacy
+            </a>{" "}
+          </p>
         </Grid>
       </Grid>
     </div>
