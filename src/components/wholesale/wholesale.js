@@ -226,19 +226,17 @@ const WholeSale = () => {
       </div>
 
       <hr className="horizontal-line" />
-      <Grid container spacing={2} className="brightspeed-list-items">
-        <Grid item xs={5}>
-          {/* <h1 className="want-to-know-more-heading">
-            Want to know more?
-            </h1> */}
 
-          {/* <p className="want-to-know-more-content">
+      <Grid container spacing={2} className="brightspeed-list-items">
+        <Grid item xs={12} sm={6} lg={5}>
+          {/* <h1 className="want-to-know-more-heading">Want to know more?</h1>
+          <p className="want-to-know-more-content">
             Learn more about Brightspeed with the help of these questions and
             answers.
           </p> */}
           <img alt="bright-speed-list" src={brightSpeedImage} className="bright-speed-image-list" />
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} sm={6} lg={7}>
           <ul className="brightspeed-list-style">
             <li
               className="brightspeed-list-style-li"
@@ -505,10 +503,9 @@ const WholeSale = () => {
 
       <hr className="horizontal-line" />
 
-      <div className="footer-data">
-        <Grid container spacing={2} className="about-brightspeed ">
-          <Grid item xs={4}>
-            <ul className="list-customers-1">
+      <Grid container spacing={2} className="about-brightspeed">
+          <Grid item xs={12} sm={6} lg={4}>
+            <ul className="list-customers">
               <strong>
                 <li className="header-list">For Customers</li>
               </strong>
@@ -516,8 +513,8 @@ const WholeSale = () => {
               <li>Support</li>
             </ul>
           </Grid>
-          <Grid item xs={3}>
-            <ul className="list-customers">
+          <Grid item xs={12} sm={6} lg={4}>
+            <ul className="list-customers-carrers">
               <strong>
                 <li className="header-list">About Brightspeed</li>
               </strong>
@@ -528,31 +525,42 @@ const WholeSale = () => {
               <li>Partner Program</li>
             </ul>
           </Grid>
-          <Grid item xs={5}>
-            <img
-              src={brspdlogo}
-              alt="logo"
-              width="50%"
-              className="img-brightspeed"
-            />
-            <h5 className="follow-us">FOLLOW US</h5>
-            <img alt="twitter" src={twitter} className="logo-social" />
-            <img alt="fb" src={fb} className="logo-social" />
-            <img alt="linkedIn" src={linkedIn} className="logo-social" />
+          <Grid item xs={12} sm={6} lg={4}>
+            <div  className="brightspeed-footer-content">
+            <div className="social-icons">
+              <img
+                src={brspdlogo}
+                alt="logo"
+                width="70%"
+                className="img-brightspeed"
+              />
+              <h5 className="follow-us">FOLLOW US</h5>
+              <img alt="twitter" src={twitter} className="logo-social" />
+              <img alt="fb" src={fb} className="logo-social" />
+              <img alt="linkedIn" src={linkedIn} className="logo-social" />
+            </div>
+
             <div className="rights-content">
               <p className="font-size-copyright">
                 <span>&#169;</span> 2022 Brightspeed. All rights reserved.
               </p>
-              <p className="font-size-copyright">
+              <p className="font-size-copyright-data">
                 {" "}
                 <strong>Legal Notices |</strong>{" "}
                 <strong>Privacy Policy |</strong>{" "}
                 <strong>Cookie Settings</strong>{" "}
               </p>
+
+              <ul className="font-size-copyright-notices">
+                <li>Legal Notices</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Settings</li>
+              </ul>
             </div>
+            </div>
+
           </Grid>
         </Grid>
-      </div>
     </React.Fragment>
   );
 };

@@ -30,6 +30,7 @@ function Navbar() {
 
   return (
     <React.Fragment>
+      <div className="top-navbar">
       <AppBar position="static">
         <CssBaseline />
         <Toolbar>
@@ -54,6 +55,8 @@ function Navbar() {
         </Toolbar>
       </AppBar>
       <p className="border-botton-navbar"></p>
+      </div>
+
     </React.Fragment>
   );
 }

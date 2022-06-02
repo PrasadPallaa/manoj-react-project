@@ -8,7 +8,6 @@ import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
 
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -35,15 +34,14 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-
 const Home = () => {
   return (
     <React.Fragment>
       <div className="home">
         <div class="image-header">
           Taking care of <br /> business where <br /> you live
-          </div>
-          <button className="button-contactus">Contact Us</button>
+        </div>
+        <button className="button-contactus">Contact Us</button>
 
         <div className="img-home"></div>
         <p className="content-1">
@@ -60,7 +58,7 @@ const Home = () => {
           <Grid item xs={12}>
             <h1 className="network-sol">Networking solutions</h1>
           </Grid>
-          <Grid item xs={4} className="ethernet">
+          <Grid item xs={12} sm={6} lg={4} className="ethernet">
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Ethernet</h3>
             <p className="border-black-Ethernet"></p>
@@ -69,41 +67,48 @@ const Home = () => {
               LANs with dedicated <br /> connections
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Internet</h3>
             <p className="border-black-internet"></p>
 
             <p className="margin-and-size-p">
-              Reliably deliver applications <br /> and data using our high <br /> performing and secure <br /> network
+              Reliably deliver applications <br /> and data using our high{" "}
+              <br /> performing and secure <br /> network
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Broadband</h3>
             <p className="border-black-broadband"></p>
 
             <p className="margin-and-size-p">
-              Faster data transmission over <br /> copper, bonded copper or <br />fiber technologies
+              Faster data transmission over <br /> copper, bonded copper or{" "}
+              <br />
+              fiber technologies
             </p>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Dark Fiber</h3>
             <p className="border-black-fiber"></p>
 
             <p className="margin-and-size-p">
-             Deliver quick payback while<br /> keeping costs under control <br /> with dedicated bandwidth
+              Deliver quick payback while
+              <br /> keeping costs under control <br /> with dedicated bandwidth
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-yellow"></p>
             <h3 className="sub-elem">Private Line</h3>
             <p className="border-black-line"></p>
 
             <p className="margin-and-size-p">
-              Reliable, secure and <br />dedicated point-to-point<br /> connectivity for voice and<br /> data traffic
+              Reliable, secure and <br />
+              dedicated point-to-point
+              <br /> connectivity for voice and
+              <br /> data traffic
             </p>
           </Grid>
         </Grid>
@@ -112,7 +117,7 @@ const Home = () => {
           <Grid item xs={12}>
             <h1 className="voice-sol">Voice solutions</h1>
           </Grid>
-          <Grid item xs={4} className="ethernet">
+          <Grid item xs={12} sm={6} lg={4} className="ethernet">
             <p className="border-orange"></p>
             <h3 className="sub-elem">Local Voice Services</h3>
             <p className="border-black-local"></p>
@@ -120,61 +125,75 @@ const Home = () => {
               Traditional phone and <br /> trunking services
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-orange"></p>
-           <a href="/ew/wholesale/voice" className="route-text-dec-none"><h3 className="sub-elem">Wholesale Voice</h3></a>
+            <a href="/ew/wholesale/voice" className="route-text-dec-none">
+              <h3 className="sub-elem">Wholesale Voice</h3>
+            </a>
             <p className="border-black-long"></p>
 
             <p className="margin-and-size-p">
               Cost-effective, scalable phone <br /> services and routing
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-orange"></p>
-            <a href="/ew/enterprise/voice" className="route-text-dec-none"> <h3 className="sub-elem">Enterprise Voice</h3></a> 
-            
+            <a href="/ew/enterprise/voice" className="route-text-dec-none">
+              {" "}
+              <h3 className="sub-elem">Enterprise Voice</h3>
+            </a>
+
             <p className="border-black-international"></p>
 
             <p className="margin-and-size-p">
-              Reliable,high-performance <br /> international connections, <br /> completions and voice quality
+              Reliable,high-performance <br /> international connections, <br />{" "}
+              completions and voice quality
             </p>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-orange"></p>
             <h3 className="sub-elem">e911</h3>
             <p className="border-black-e911"></p>
 
             <p className="margin-and-size-p">
-              Route end-users calls to an <br /> emergency service bureau or <br />the Public Safety Answering <br /> Point (PSAP)
+              Route end-users calls to an <br /> emergency service bureau or{" "}
+              <br />
+              the Public Safety Answering <br /> Point (PSAP)
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-orange"></p>
             <h3 className="sub-elem">Direct Inward Dial PBX Trunks</h3>
             <p className="border-black-direct"></p>
 
             <p className="margin-and-size-p">
-              Give customers the ability to <br />directly dial a specific <br /> extension on your PBX system
+              Give customers the ability to <br />
+              directly dial a specific <br /> extension on your PBX system
             </p>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} lg={4}>
             <p className="border-orange"></p>
             <h3 className="sub-elem">Line Volume plan</h3>
             <p className="border-black-line_voulume"></p>
 
             <p className="margin-and-size-p">
-              Lock in a competitive and <br /> consistent rate for local <br /> calling services
+              Lock in a competitive and <br /> consistent rate for local <br />{" "}
+              calling services
             </p>
           </Grid>
         </Grid>
 
         <div className="choose-brightspeed">
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <h1 className="why-h1">Why choose Brightspeed?</h1>
-            </Grid>
-            <Grid item xs={6} >
+          <Grid item xs={12}>
+            <h1 className="why-h1">Why choose Brightspeed?</h1>
+          </Grid>
+          <Grid
+            container
+            spacing={2}
+            className="choose-brightspeed-whoel-content"
+          >
+            <Grid item xs={12} sm={6} lg={4}>
               <p className="why-p">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -183,16 +202,11 @@ const Home = () => {
                 survived not only five centuries, but also the leap into
                 electronic typesetting, remaining essentially unchanged. It was
                 popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                popularised in the 1960s with the release of Letraset sheets
               </p>
             </Grid>
-            <Grid item xs={6} className="brightspeed-sub-right">
+            <Grid item xs={12} sm={6} lg={4} className="brightspeed-sub-right">
               <h5 className="brightspeed-sub">Local, not small</h5>
-              <p>
+              <p className="brightspeed-sub-right-content">
                 {" "}
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -201,7 +215,7 @@ const Home = () => {
                 survived not only five centuries, but also the leap into
               </p>
               <h5 className="brightspeed-sub">Comitted, not complicated</h5>
-              <p>
+              <p className="brightspeed-sub-right-content">
                 {" "}
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -214,7 +228,7 @@ const Home = () => {
         </div>
 
         <Grid container spacing={2} className="about-brightspeed">
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} lg={4}>
             <ul className="list-customers">
               <strong>
                 <li className="header-list">For Customers</li>
@@ -223,10 +237,10 @@ const Home = () => {
               <li>Support</li>
             </ul>
           </Grid>
-          <Grid item xs={3}>
-            <ul className="list-customers">
+          <Grid item xs={12} sm={6} lg={4}>
+            <ul className="list-customers-carrers">
               <strong>
-                <li  className="header-list">About Brightspeed</li>
+                <li className="header-list">About Brightspeed</li>
               </strong>
               <li>Careers</li>
               <li>Newsroom</li>
@@ -235,23 +249,40 @@ const Home = () => {
               <li>Partner Program</li>
             </ul>
           </Grid>
-          <Grid item xs={6}>
-            <img
-              src={brspdlogo}
-              alt="logo"
-              width="50%"
-              className="img-brightspeed"
-            />
-            <h5 className="follow-us">FOLLOW US</h5>
-            <img alt="twitter" src={twitter} className="logo-social" />
-            <img alt="fb" src={fb} className="logo-social" />
-            <img alt="linkedIn" src={linkedIn} className="logo-social" />
-            <div className="rights-content">
-            <p className="font-size-copyright">
-              <span>&#169;</span> 2022 Brightspeed. All rights reserved.
-            </p>
-            <p className="font-size-copyright"> <strong>Legal Notices |</strong> <strong>Privacy Policy |</strong> <strong>Cookie Settings</strong> </p>
+          <Grid item xs={12} sm={6} lg={4}>
+            <div  className="brightspeed-footer-content">
+            <div className="social-icons">
+              <img
+                src={brspdlogo}
+                alt="logo"
+                width="70%"
+                className="img-brightspeed"
+              />
+              <h5 className="follow-us">FOLLOW US</h5>
+              <img alt="twitter" src={twitter} className="logo-social" />
+              <img alt="fb" src={fb} className="logo-social" />
+              <img alt="linkedIn" src={linkedIn} className="logo-social" />
             </div>
+
+            <div className="rights-content">
+              <p className="font-size-copyright">
+                <span>&#169;</span> 2022 Brightspeed. All rights reserved.
+              </p>
+              <p className="font-size-copyright-data">
+                {" "}
+                <strong>Legal Notices |</strong>{" "}
+                <strong>Privacy Policy |</strong>{" "}
+                <strong>Cookie Settings</strong>{" "}
+              </p>
+
+              <ul className="font-size-copyright-notices">
+                <li>Legal Notices</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Settings</li>
+              </ul>
+            </div>
+            </div>
+
           </Grid>
         </Grid>
       </div>

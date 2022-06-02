@@ -62,10 +62,12 @@ function NavbarBottom() {
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
+            className="bottom-navbar-links"
           >
             {breadcrumbs}
           </Breadcrumbs>
-          <div className={classes.navlinks}>
+          <div className={classes.navlinks} >
+            <div className="contact-details">
             <a href="#sales-agent" className={classes.link}>
               Talk to a sales Agent <br />
               +19159969739
@@ -73,14 +75,17 @@ function NavbarBottom() {
             <a href="#request-info">
               <button className="contactus">Contact Us</button>
             </a>
+            </div>
+           
           </div>
+          
         </Toolbar>
       </AppBar>
       <p className="border-botton-navbar"></p>
-      <div className="image-header">
+      <div className="image-header-1">
         Internet equals <br /> opportunity.
       </div>
-      <h2 className="image-sub-header">
+      <h2 className="image-sub-header-1">
         Get ready for a new choice in Internet <br />
         that offers the speed, simplicity, and reliability
         <br />
