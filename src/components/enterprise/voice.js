@@ -155,9 +155,9 @@ const Voice = () => {
         <div className="content-collpase">
           {open1 ? (
             <div>
-              <h1 className="content-collpase-header">BCC</h1>
+              <h1 className="content-collpase-header">Business Cloud Computing</h1>
               <h3 className="content-collpase-sub-header">
-                Give customers the BCC calling flexibility and features they
+                Give customers the Business Cloud Computing calling flexibility and features they
                 need.
               </h3>
               <p className="content-collpase-content">
