@@ -11,11 +11,26 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
+import ListItemText from "@mui/material/ListItemText";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
+
+
+// const names = [
+//   'Oliver Hansen',
+//   'Van Henry',
+//   'April Tucker',
+//   'Ralph Hubbard',
+//   'Omar Alexander',
+//   'Carlos Abbott',
+//   'Miriam Wagner',
+//   'Bradley Wilkerson',
+//   'Virginia Andrews',
+//   'Kelly Snyder',
+// ];
 const MenuProps = {
   PaperProps: {
     style: {
@@ -56,15 +71,16 @@ const RequestInfo = () => {
   const [noOfUsers, setNoOfUser] = useState();
   const [internetService, setInternetService] = useState(["Yes"]);
   const [contactAgent, setContactAgent] = useState(["Email"]);
+  const [personName1, setPersonName1] = React.useState([]);
 
-  // const handleChange1 = (event) => {
-  //   const {
-  //     target: { value },
-  //   } = event;
-  //   setPersonName(
-  //     typeof value === "string" ? value.split(",") : value
-  //   );
-  // };
+  const handleChange2 = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -73,6 +89,18 @@ const RequestInfo = () => {
   function onChange(value) {
     console.log("Captcha value:", value);
   }
+
+  
+
+  const handleChange1 = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setServicePlan(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
 
   return (
     <div className="request-info container">
@@ -179,7 +207,7 @@ const RequestInfo = () => {
           />
         </Grid>
         <Grid item xs={6}>
-          <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
+          {/* <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
             <InputLabel id="demo-multiple-checkbox-label">
               Service Plan *
             </InputLabel>
@@ -196,7 +224,7 @@ const RequestInfo = () => {
                 setServicePlan(event.target.value);
               }}
             >
-              {/* {names.map((name) => (
+              {names.map((name) => (
                 <MenuItem
                   key={name}
                   value={name}
@@ -204,11 +232,30 @@ const RequestInfo = () => {
                 >
                   {name}
                 </MenuItem>
-              ))} */}
+              ))}
+            </Select>
+            {servicePlan.length === 0 ? (
+              <FormHelperText>This field is required!</FormHelperText>
+            ) : (
+              ""
+            )}
+          </FormControl> */}
 
+          <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
+            <InputLabel id="demo-multiple-checkbox-label">Service Plan</InputLabel>
+            <Select
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
+              multiple
+              value={servicePlan}
+              onChange={handleChange1}
+              input={<OutlinedInput label="Service Plan" />}
+              renderValue={(selected) => selected.join(", ")}
+              MenuProps={MenuProps}
+            >
               {names.map((name) => (
                 <MenuItem key={name} value={name}>
-                  <Checkbox checked={personName.indexOf(name) > -1} />
+                  <Checkbox checked={servicePlan.indexOf(name) > -1} />
                   <ListItemText primary={name} />
                 </MenuItem>
               ))}
