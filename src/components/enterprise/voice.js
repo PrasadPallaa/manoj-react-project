@@ -127,7 +127,7 @@ const Voice = () => {
               className={open1 ? "bcc-selected" : ""}
             >
               {/* <ListItemIcon>{open1 ? <SendIcon /> : ""}</ListItemIcon> */}
-              <ListItemText primary={open1 ? <strong>BCC</strong> : "BCC"} />
+              <ListItemText primary={open1 ? <strong>Business Cloud Computing</strong> : "Business Cloud Computing"} />
             </ListItemButton>
             <ListItemButton
               onClick={handleClick2}
