@@ -180,12 +180,12 @@ const RequestInfo = () => {
         </Grid>
         <Grid item xs={6}>
           <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
-            <InputLabel id="demo-multiple-name-label">
+            <InputLabel id="demo-multiple-checkbox-label">
               Service Plan *
             </InputLabel>
             <Select
-              labelId="demo-multiple-name-label"
-              id="demo-multiple-name"
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
               required
               multiple
               // onChange={handleChange1}
@@ -196,13 +196,20 @@ const RequestInfo = () => {
                 setServicePlan(event.target.value);
               }}
             >
-              {names.map((name) => (
+              {/* {names.map((name) => (
                 <MenuItem
                   key={name}
                   value={name}
                   style={getStyles(name, personName, theme)}
                 >
                   {name}
+                </MenuItem>
+              ))} */}
+
+              {names.map((name) => (
+                <MenuItem key={name} value={name}>
+                  <Checkbox checked={personName.indexOf(name) > -1} />
+                  <ListItemText primary={name} />
                 </MenuItem>
               ))}
             </Select>
