@@ -1158,8 +1158,6 @@ li {
   }
 }
 
-
-
 /* 
 .bcc-mobile-content {
   display: none;
@@ -1231,8 +1229,6 @@ li {
   }
 }
 
-
-
 .img-home {
   background-image: url("./images/Branding/Image\ Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098471/RF_GettyImages-1359098471_Purchased 2.11.png");
   background-size: cover;
@@ -1298,6 +1294,27 @@ li {
   text-transform: none !important;
 }
 
+.brightspeed-email-button {
+  padding: 1.2rem !important;
+  border-radius: 35px !important;
+  width: 150px !important;
+  color: black !important;
+  background-color: white !important;
+  text-transform: none !important;
+  margin-top: 1rem !important;
+  border: 2px solid black !important;
+  font-size: 17px !important;
+}
+
+.brightspeed-email-button:hover {
+  color: white !important;
+  background-color: black !important;
+}
+
+.anchor-bright {
+  color: blue !important;
+}
+
 .css-1ri6ub7-MuiPaper-root-MuiCard-root {
   padding: 1rem !important;
 }
@@ -1356,7 +1373,6 @@ a {
   font-size: 17px;
 }
 
-
 @media screen and (min-width: 601px) {
   .brightspeed-list-items {
     padding: 5rem;
@@ -1368,9 +1384,6 @@ a {
     padding: 1rem;
   }
 }
-
-
-
 
 .want-to-know-more-heading {
   font-weight: 800;
@@ -1401,14 +1414,12 @@ a {
   }
 }
 
-
-
 .brightspeed-list-style-li:hover {
   cursor: pointer;
 }
 
 .brightspeed-list-li-content {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0 0rem 0;
   font-size: 16px;
 }
 
@@ -1542,3 +1553,9 @@ a {
     display: none;
   }
 } */
+
+.form-control-email {
+  width: 79% !important;
+  padding: 1rem 0.75rem !important;
+  border: 3px solid #ced4da !important;
+}

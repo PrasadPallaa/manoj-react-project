@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
 import Grid from "@mui/material/Grid";
 import NavbarBottom from "../bottom-navbar";
 import RequestInfo from "../enterprise/requestInfo";
@@ -8,11 +9,10 @@ import linkedIn from "../../images/Branding/logos_2/linkedIn.png";
 import brspdlogo from "../../images/Branding/01 Logo/Logo/Full Color/Digital/Brightspeed_Logo_Full_Color_RGB_864px@72ppi.png";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import SendIcon from "@mui/icons-material/Send";
+import Button from "@mui/material/Button";
 import DownArrow from "../../images/Branding/logos_2/980c46c6-cb9f-47d8-b27b-f3401c5fb813.png";
-import brightSpeedImage from "../../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098766/RF_GettyImages-1359098766_Purchased 2.11.png"
+import brightSpeedImage from "../../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098766/RF_GettyImages-1359098766_Purchased 2.11.png";
 
 const WholeSale = () => {
   const [open1, setOpen1] = React.useState(true);
@@ -98,7 +98,9 @@ const WholeSale = () => {
   return (
     <React.Fragment>
       <NavbarBottom />
-      <h1 id="voice-and-voip" className="voip-product">VoIP Products</h1>
+      <h1 id="voice-and-voip" className="voip-product">
+        VoIP Products
+      </h1>
       <p className="voip-services">
         Find services that fit your business needs
       </p>
@@ -113,7 +115,15 @@ const WholeSale = () => {
             className={open1 ? "bcc-selected" : ""}
           >
             {/* <ListItemIcon>{open1 ? <SendIcon /> : ""}</ListItemIcon> */}
-            <ListItemText primary={open1 ? <strong>Business Cloud Computing</strong> : "Business Cloud Computing"} />
+            <ListItemText
+              primary={
+                open1 ? (
+                  <strong>Business Cloud Computing</strong>
+                ) : (
+                  "Business Cloud Computing"
+                )
+              }
+            />
           </ListItemButton>
           <ListItemButton
             onClick={handleClick2}
@@ -140,10 +150,12 @@ const WholeSale = () => {
         <div className="content-collpase">
           {open1 ? (
             <div>
-              <h1 className="content-collpase-header">Business Cloud Computing</h1>
+              <h1 className="content-collpase-header">
+                Business Cloud Computing
+              </h1>
               <h3 className="content-collpase-sub-header">
-                Give customers the Business Cloud Computing calling flexibility and features they
-                need.
+                Give customers the Business Cloud Computing calling flexibility
+                and features they need.
               </h3>
               <p className="content-collpase-content">
                 An intelligent network and comprehensive suite of inbound voice
@@ -234,7 +246,11 @@ const WholeSale = () => {
             Learn more about Brightspeed with the help of these questions and
             answers.
           </p> */}
-          <img alt="bright-speed-list" src={brightSpeedImage} className="bright-speed-image-list" />
+          <img
+            alt="bright-speed-list"
+            src={brightSpeedImage}
+            className="bright-speed-image-list"
+          />
         </Grid>
         <Grid item xs={12} sm={6} lg={7}>
           <ul className="brightspeed-list-style">
@@ -254,30 +270,30 @@ const WholeSale = () => {
 
             {brightspeedlist1 ? (
               <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
+                Our company exists because we believe that all people and
+                businesses should have access to the connectivity they need to
+                accomplish what is most important to them. Our goal, over the
+                next several years, is to build a next-gen fiber optics–based
+                network to power Internet access for the communities we will be
+                privileged to serve. <br /> <br /> Brightspeed was formed by the agreement
+                reached in August 2021 between Connect Holding LLC and Lumen
+                Technologies, Inc. for Apollo Global Management, Inc. to acquire
+                certain telecom assets and operations from Lumen. Our network
+                will serve more than 6 million homes and businesses in 20
+                states, primarily in the Midwest and Southeast portions of the
+                U.S.  <br /> <br /> What truly excites us is the chance to bring the best
+                technology to communities, particularly in rural and suburban
+                America, who have not always had the choices in Internet
+                providers that they need and deserve. <br /> <br /> We hope you will come to
+                know us as the kind of people who wake up every morning thinking
+                about better ways to provide the best, most reliable service to
+                consumers and businesses, big and small. We’re committed to
+                building a smart network for customers who want consistently
+                fast Internet, at a great value, delivered through a customer
+                experience that makes staying connected  <br /> <br /> We
+                understand that Internet access powers life. We’re about keeping
+                you connected, so you can work, learn, play, and accomplish what
+                matters most.
               </p>
             ) : (
               ""
@@ -297,30 +313,19 @@ const WholeSale = () => {
             </li>
             {brightspeedlist2 ? (
               <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
+                As more and more of our country’s commerce, workforce norms,
+                education systems, health care platforms, and entertainment
+                choices gravitate online, the need for faster, more reliable
+                Internet access is imperative. <br /> <br /> Technology is the key to our
+                digital future, and we believe all current and prospective
+                customers should have access to the best Internet service
+                possible, whether they are connected to our legacy copper
+                network or our new fiber platform. We are fierce advocates for
+                more accessible, inclusive, and high-quality Internet, and
+                believe that doing so promotes equity in the communities we
+                serve.<br /> <br /> We are taking a bold view of this opportunity and are
+                confident in our ability to deliver. We plan to build fiber to
+                up to 3 million locations over the next 5 years.
               </p>
             ) : (
               ""
@@ -340,30 +345,19 @@ const WholeSale = () => {
             </li>
             {brightspeedlist3 ? (
               <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
+                Fiber-optic technology set a new standard for broadband services
+                in America, and has been deployed in markets across the country
+                for the past 15 years or so. Brightspeed’s smart network will be
+                built using the latest version of that standard. Fiber optics’
+                secret sauce, unmatched by competing technologies, has always
+                been the capability to deliver upstream speeds (speeds when
+                sending information from the home or business, like during a
+                video conference) as fast as downstream speeds (speeds coming to
+                the home or business). It’s interactive and two-way fast, just
+                like life! <br /><br /> We’re more than just a technology company. We want
+                people and businesses to experience simplicity, reliability, and
+                choice when they do business with Brightspeed, and to trust us
+                to successfully handle their most important connections.
               </p>
             ) : (
               ""
@@ -382,32 +376,26 @@ const WholeSale = () => {
               </span>
             </li>
             {brightspeedlist4 ? (
-              <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
-              </p>
+              <div>
+                <p className="brightspeed-list-li-content">
+                  We expect to be open for business in the second half of 2022.
+                  We know that the time will pass by at light speed. So check
+                  out our map to see the states where we will be offering
+                  services. <br /><br /> In the meantime, let’s keep in touch. Just provide
+                  your email address, and we will keep you posted on all the
+                  latest news and updates.
+                </p>
+                <Form.Control
+                  type="email"
+                  placeholder="your.email@domain.com"
+                  className="form-control-email"
+                />
+                <Grid item xs={12}>
+                  <Button className="quote-button-quote brightspeed-email-button">
+                    Sign Up
+                  </Button>
+                </Grid>
+              </div>
             ) : (
               ""
             )}
@@ -426,30 +414,15 @@ const WholeSale = () => {
             </li>
             {brightspeedlist5 ? (
               <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
+                We believe the opportunities ahead of us will change and improve
+                the lives of our employees and our customers. The investment and
+                transformation we are planning are bold, so we are seeking bold
+                thinkers, innovators, doers, and collaborative leaders to help
+                us shape this journey. <br /> <br /> <br /> To see what spots are currently
+                available, please visit our careers site:
+                <a href="https://careers.smartrecruiters.com/Brightspeed" className="anchor-bright">
+                  https://careers.smartrecruiters.com/Brightspeed
+                </a>
               </p>
             ) : (
               ""
@@ -469,30 +442,8 @@ const WholeSale = () => {
             </li>
             {brightspeedlist6 ? (
               <p className="brightspeed-list-li-content">
-                Who is Brightspeed? Our company exists because we believe that
-                all people and businesses should have access to the connectivity
-                they need to accomplish what is most important to them. Our
-                goal, over the next several years, is to build a next-gen fiber
-                optics–based network to power Internet access for the
-                communities we will be privileged to serve. Brightspeed was
-                formed by the agreement reached in August 2021 between Connect
-                Holding LLC and Lumen Technologies, Inc. for Apollo Global
-                Management, Inc. to acquire certain telecom assets and
-                operations from Lumen. Our network will serve more than 6
-                million homes and businesses in 20 states, primarily in the
-                Midwest and Southeast portions of the U.S. What truly excites us
-                is the chance to bring the best technology to communities,
-                particularly in rural and suburban America, who have not always
-                had the choices in Internet providers that they need and
-                deserve. We hope you will come to know us as the kind of people
-                who wake up every morning thinking about better ways to provide
-                the best, most reliable service to consumers and businesses, big
-                and small. We’re committed to building a smart network for
-                customers who want consistently fast Internet, at a great value,
-                delivered through a customer experience that makes staying
-                connected simple and easy. We understand that Internet access
-                powers life. We’re about keeping you connected, so you can work,
-                learn, play, and accomplish what matters most.
+                We are thrilled to call Charlotte, North Carolina, our hometown,
+                and are excited to join the Queen City’s vibrant community.
               </p>
             ) : (
               ""
@@ -504,29 +455,29 @@ const WholeSale = () => {
       <hr className="horizontal-line" />
 
       <Grid container spacing={2} className="about-brightspeed">
-          <Grid item xs={12} sm={6} lg={4}>
-            <ul className="list-customers">
-              <strong>
-                <li className="header-list">For Customers</li>
-              </strong>
-              <li>Customers With Disablities</li>
-              <li>Support</li>
-            </ul>
-          </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
-            <ul className="list-customers-carrers">
-              <strong>
-                <li className="header-list">About Brightspeed</li>
-              </strong>
-              <li>Careers</li>
-              <li>Newsroom</li>
-              <li>Contact Us</li>
-              <li>Wholesale</li>
-              <li>Partner Program</li>
-            </ul>
-          </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
-            <div  className="brightspeed-footer-content">
+        <Grid item xs={12} sm={6} lg={4}>
+          <ul className="list-customers">
+            <strong>
+              <li className="header-list">For Customers</li>
+            </strong>
+            <li>Customers With Disablities</li>
+            <li>Support</li>
+          </ul>
+        </Grid>
+        <Grid item xs={12} sm={6} lg={4}>
+          <ul className="list-customers-carrers">
+            <strong>
+              <li className="header-list">About Brightspeed</li>
+            </strong>
+            <li>Careers</li>
+            <li>Newsroom</li>
+            <li>Contact Us</li>
+            <li>Wholesale</li>
+            <li>Partner Program</li>
+          </ul>
+        </Grid>
+        <Grid item xs={12} sm={6} lg={4}>
+          <div className="brightspeed-footer-content">
             <div className="social-icons">
               <img
                 src={brspdlogo}
@@ -557,10 +508,9 @@ const WholeSale = () => {
                 <li>Cookie Settings</li>
               </ul>
             </div>
-            </div>
-
-          </Grid>
+          </div>
         </Grid>
+      </Grid>
     </React.Fragment>
   );
 };

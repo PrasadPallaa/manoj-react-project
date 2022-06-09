@@ -11,13 +11,12 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
-
 
 // const names = [
 //   'Oliver Hansen',
@@ -78,9 +77,7 @@ const RequestInfo = () => {
     const {
       target: { value },
     } = event;
-    setPersonName(
-      typeof value === "string" ? value.split(",") : value
-    );
+    setPersonName(typeof value === "string" ? value.split(",") : value);
   };
 
   const handleChange = (event) => {
@@ -93,9 +90,7 @@ const RequestInfo = () => {
 
   const onSubmit = () => {
     setIsSubmit(true);
-  }
-
-  
+  };
 
   const handleChange1 = (event) => {
     const {
@@ -103,7 +98,7 @@ const RequestInfo = () => {
     } = event;
     setServicePlan(
       // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
+      typeof value === "string" ? value.split(",") : value
     );
   };
 
@@ -124,7 +119,11 @@ const RequestInfo = () => {
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
             error={firstName === "" && isSubmit === true}
-            helperText={firstName === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              firstName === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -136,7 +135,11 @@ const RequestInfo = () => {
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
             error={lastName === "" && isSubmit === true}
-            helperText={lastName === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              lastName === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -148,7 +151,11 @@ const RequestInfo = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             error={email === "" && isSubmit === true}
-            helperText={email === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              email === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
 
@@ -161,7 +168,11 @@ const RequestInfo = () => {
             value={companyName}
             onChange={(event) => setCompanyName(event.target.value)}
             error={companyName === "" && isSubmit === true}
-            helperText={companyName === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              companyName === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
 
@@ -174,7 +185,11 @@ const RequestInfo = () => {
             value={address}
             onChange={(event) => setAddress(event.target.value)}
             error={address === "" && isSubmit === true}
-            helperText={address === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              address === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -186,7 +201,11 @@ const RequestInfo = () => {
             value={stateValue}
             onChange={(event) => setStateValue(event.target.value)}
             error={stateValue === "" && isSubmit === true}
-            helperText={stateValue === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              stateValue === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -198,7 +217,9 @@ const RequestInfo = () => {
             value={zip}
             onChange={(event) => setZip(event.target.value)}
             error={zip === "" && isSubmit === true}
-            helperText={zip === ""  && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              zip === "" && isSubmit === true ? "This field is required!" : " "
+            }
           />
         </Grid>
 
@@ -211,7 +232,11 @@ const RequestInfo = () => {
             value={phoneNumber}
             onChange={(event) => setPhoneNumber(event.target.value)}
             error={phoneNumber === "" && isSubmit === true}
-            helperText={phoneNumber === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              phoneNumber === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
 
@@ -250,10 +275,15 @@ const RequestInfo = () => {
             )}
           </FormControl> */}
 
-{/* error={servicePlan.length === 0} */}
+          {/* error={servicePlan.length === 0} */}
 
-          <FormControl sx={{ width: 640 }} error={servicePlan.length === 0 && isSubmit == true}>
-            <InputLabel id="demo-multiple-checkbox-label">Service Plan</InputLabel>
+          <FormControl
+            sx={{ width: 640 }}
+            error={servicePlan.length === 0 && isSubmit === true}
+          >
+            <InputLabel id="demo-multiple-checkbox-label">
+              Service Plan
+            </InputLabel>
             <Select
               labelId="demo-multiple-checkbox-label"
               id="demo-multiple-checkbox"
@@ -272,7 +302,7 @@ const RequestInfo = () => {
                 </MenuItem>
               ))}
             </Select>
-            {servicePlan.length === 0 && isSubmit == true? (
+            {servicePlan.length === 0 && isSubmit === true ? (
               <FormHelperText>This field is required!</FormHelperText>
             ) : (
               ""
@@ -287,12 +317,19 @@ const RequestInfo = () => {
             id="users"
             value={noOfUsers}
             onChange={(event) => setNoOfUser(event.target.value)}
-            error={noOfUsers === ""  && isSubmit === true}
-            helperText={noOfUsers === "" && isSubmit === true ? "This field is required!" : " "}
+            error={noOfUsers === "" && isSubmit === true}
+            helperText={
+              noOfUsers === "" && isSubmit === true
+                ? "This field is required!"
+                : " "
+            }
           />
         </Grid>
         <Grid item xs={6}>
-          <FormControl sx={{ width: 640 }} error={internetService.length === 0  && isSubmit == true}>
+          <FormControl
+            sx={{ width: 640 }}
+            error={internetService.length === 0 && isSubmit === true}
+          >
             <InputLabel id="demo-multiple-name-label">
               Do you currently have internet service ? *
             </InputLabel>
@@ -319,7 +356,7 @@ const RequestInfo = () => {
                 </MenuItem>
               ))}
             </Select>
-            {internetService.length === 0  && isSubmit == true ? (
+            {internetService.length === 0 && isSubmit === true ? (
               <FormHelperText>This field is required!</FormHelperText>
             ) : (
               ""
@@ -328,43 +365,47 @@ const RequestInfo = () => {
         </Grid>
 
         <Grid item xs={6}>
-          {!checked ? (
-            <FormControl sx={{ width: 640 }} error={contactAgent.length === 0 && isSubmit == true}>
-              <InputLabel id="demo-multiple-name-label">
-                How would you like our sales agent to contact you ? *
-              </InputLabel>
-              <Select
-                labelId="demo-multiple-name-label"
-                id="demo-multiple-name"
-                required
-                input={
-                  <OutlinedInput label="How would you like our sales agent to contact you ? *" />
-                }
-                MenuProps={MenuProps}
-                value={contactAgent}
-                onChange={(event) => {
-                  setContactAgent(event.target.value);
-                }}
-              >
-                {contactInfo.map((name) => (
-                  <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, personName, theme)}
-                  >
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-              {contactAgent.length === 0  && isSubmit == true ? (
-                <FormHelperText>This field is required!</FormHelperText>
-              ) : (
-                ""
-              )}
-            </FormControl>
-          ) : (
-            // <TextField required fullWidth label="BAN" id="ban" type="number" />
-            <TextField
+          <FormControl
+            sx={{ width: 640 }}
+            error={contactAgent.length === 0 && isSubmit === true}
+          >
+            <InputLabel id="demo-multiple-name-label">
+              How would you like our sales agent to contact you ? *
+            </InputLabel>
+            <Select
+              labelId="demo-multiple-name-label"
+              id="demo-multiple-name"
+              required
+              input={
+                <OutlinedInput label="How would you like our sales agent to contact you ? *" />
+              }
+              MenuProps={MenuProps}
+              value={contactAgent}
+              onChange={(event) => {
+                setContactAgent(event.target.value);
+              }}
+            >
+              {contactInfo.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+            {contactAgent.length === 0 && isSubmit === true ? (
+              <FormHelperText>This field is required!</FormHelperText>
+            ) : (
+              ""
+            )}
+          </FormControl>
+
+        </Grid>
+
+        <Grid item xs={6}>
+          <TextField
             fullWidth
             required
             type="number"
@@ -373,22 +414,13 @@ const RequestInfo = () => {
             value={ban}
             onChange={(event) => setBan(event.target.value)}
             error={ban === "" && isSubmit === true}
-            helperText={ban === "" && isSubmit === true ? "This field is required!" : " "}
+            helperText={
+              ban === "" && isSubmit === true ? "This field is required!" : " "
+            }
           />
-          )}
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={checked}
-                  onChange={handleChange}
-                  inputProps={{ "aria-label": "controlled" }}
-                />
-              }
-              label="Is existing customer ?"
-            />
-          </FormGroup>
+
         </Grid>
+
         <Grid item xs={12}>
           <TextField
             fullWidth
@@ -414,7 +446,9 @@ const RequestInfo = () => {
           />
         </Grid>
         <Grid item xs={12} className="quote-button">
-          <Button className="quote-button-quote" onClick={onSubmit}>Submit Info</Button>
+          <Button className="quote-button-quote" onClick={onSubmit}>
+            Submit Info
+          </Button>
         </Grid>
         <Grid item xs={12} className="quote-button">
           <p>
