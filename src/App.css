@@ -848,6 +848,11 @@ li {
   margin-top: 24px;
 }
 
+.img-brightspeed-login {
+  width: 23rem;
+  margin: 1rem;
+}
+
 .follow-us {
   margin-top: 25px;
   font-weight: 600;
@@ -1235,6 +1240,12 @@ li {
   height: 40rem;
 }
 
+.img-login {
+  background-image: url("./images/Branding/Image\ Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098471/RF_GettyImages-1359098471_Purchased 2.11.png");
+  background-size: cover;
+  height: 40rem;
+}
+
 .route-text-dec-none {
   text-decoration: none;
   color: #282c34;
@@ -1267,6 +1278,14 @@ li {
   justify-content: center;
 }
 
+.login-button {
+  /* margin-top: 2rem; */
+  display: flex;
+  justify-content: center;
+  /* margin-left: -3rem !important; */
+  margin-left: 6rem !important;
+}
+
 .req-info-title {
   font-family: system-ui;
   font-size: 40px;
@@ -1292,6 +1311,16 @@ li {
   color: black !important;
   background-color: #fa783c !important;
   text-transform: none !important;
+}
+
+.login-button-login {
+  padding: 1.2rem !important;
+  border-radius: 35px !important;
+  width: 150px !important;
+  color: black !important;
+  background-color: #ffc800 !important;
+  text-transform: none !important;
+  margin-top: 33px !important;
 }
 
 .brightspeed-email-button {
@@ -1558,4 +1587,28 @@ a {
   width: 79% !important;
   padding: 1rem 0.75rem !important;
   border: 3px solid #ced4da !important;
+}
+
+.login-form {
+  margin-top: 12rem;
+}
+
+.login-password {
+  margin-top: 10px !important;
+}
+
+.forget-password {
+  border-bottom: 1px solid black;
+  float: right;
+  margin-left: 1rem;
+  margin-top: -14px;
+}
+
+.forgt-pass-link {
+  font-size: 13px;
+}
+
+.forget-password:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
