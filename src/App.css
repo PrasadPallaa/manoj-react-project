@@ -1304,13 +1304,14 @@ li {
   color: #0d6efd !important;
 }
 
-.quote-button-quote {
-  padding: 1.2rem !important;
-  border-radius: 35px !important;
+.sales-order-button-save-cancel {
+  padding: 0.5rem !important;
+  border-radius: 10px !important;
   width: 150px !important;
   color: black !important;
-  background-color: #fa783c !important;
+  background-color:  #ffc800 !important;
   text-transform: none !important;
+  margin: 5px !important;
 }
 
 .login-button-login {
@@ -1635,4 +1636,40 @@ a {
   display: flex !important;
   border: 2px solid #e3e0e0 !important;
   border-radius: 5px !important;
+}
+
+.go-button {
+  /* padding: rem !important; */
+  border-radius: 12px !important;
+  width: 81px !important;
+  color: black !important;
+  /* background-color: #ffc800 !important; */
+  text-transform: none !important;
+  margin-top: 13px !important;
+  margin-left: 5px !important;
+  border: 1px solid gray !important;
+}
+.go-button:hover {
+  color: black !important;
+  background-color: #ffc800 !important;
+}
+
+.new-button {
+  border-radius: 10px !important;
+  width: 150px !important;
+  color: black !important;
+  background-color: #ffc800 !important;
+  text-transform: none !important;
+  height: 3rem !important;
+}
+
+.new-button-container {
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+
+.sales-order-table {
+  margin-top: 1rem !important;
 }
