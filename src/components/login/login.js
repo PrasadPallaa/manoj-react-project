@@ -4,14 +4,19 @@ import loginpageImage from "../../images/Branding/Image Library/Brightspeed Imag
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSubmit, setIsSubmit] = React.useState(false);
+  const [isSubmit, setIsSubmit] = React.useState();
 
   const onSubmit = () => {
-    setIsSubmit(true);
+    if (email === "anjani.mittal@brightspeed.com" || password === "password") {
+      setIsSubmit(true);
+    } else {
+      setIsSubmit(false);
+    }
   };
   return (
     <>
@@ -31,11 +36,12 @@ const Login = () => {
                 style={{ width: "92%" }}
                 label="Email"
                 id="Email"
+                placeholder="@brightspeed.com"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                error={email === "" && isSubmit === true}
+                error={email === "" && isSubmit === false}
                 helperText={
-                  email === "" && isSubmit === true ? "Email is required!" : " "
+                  email === "" && isSubmit === false ? "Email is required!" : " "
                 }
               />
             </Grid>
@@ -47,9 +53,9 @@ const Login = () => {
                 id="Password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                error={password === "" && isSubmit === true}
+                error={password === "" && isSubmit === false}
                 helperText={
-                  password === "" && isSubmit === true
+                  password === "" && isSubmit === false
                     ? "Password is required!"
                     : " "
                 }
@@ -59,10 +65,10 @@ const Login = () => {
               <label className="forget-password">
                 <a className="forgt-pass-link">Forget Password</a>
               </label>
-              </Grid>
+            </Grid>
             <Grid item className="login-button">
               <Button className="login-button-login" onClick={onSubmit}>
-                Login
+                <Link to={isSubmit === true && "/home/lead"}>Login</Link>
               </Button>
             </Grid>
           </div>

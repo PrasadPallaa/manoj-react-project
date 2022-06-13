@@ -14,16 +14,18 @@ import Navbar from "./components/navbar";
 import WholeSale from "./components/wholesale/wholesale";
 import Voice from "./components/enterprise/voice";
 import Login from "./components/login/login";
+import Lead from "./pages/leadPage";
 
 
 export default function App(props) {
   const pathname = window.location.pathname;
+  console.log(pathname);
   return (
     <>
       <BrowserRouter>
-        {pathname !== "/login" && <Navbar />}
+        {(pathname !== "/login") ? <Navbar /> : ""}
         <Routes>
-          {pathname !== "/login" && (
+          {(pathname !== "/login" || pathname !== "/home/lead") && (
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="blogs" element={<Blogs />} />
@@ -38,6 +40,7 @@ export default function App(props) {
             </Route>
           )}
           <Route path="login" element={<Login />} />
+          <Route path="home/lead" element={<Lead />} />
         </Routes>
       </BrowserRouter>
     </>
