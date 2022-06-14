@@ -1693,3 +1693,15 @@ a {
   border: none !important;
   display: none !important;
 }
+
+.setting-icon {
+  width: 25px;
+  height: 25px;
+  margin-top: 1rem;
+}
+
+.logged-in-user-settings {
+  display: flex !important;
+  margin-top: 1rem !important;
+  justify-content: end !important;
+}

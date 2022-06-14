@@ -27,6 +27,7 @@ import Select from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
+import SettingIcon from "../images/Branding/09 Icon Library/PNG/settings.png";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -115,9 +116,33 @@ function createData(
 }
 
 const rows = [
-  createData("ManojKumar234", "Chaithanya Nimmala", "Tech M", "Business Cloud Computing", "chaithanya@techm.com", 24, 4.0),
-  createData("ManojKumar234", "Chaithanya Nimmala", "IBM", "SIP Trunk", "chaithanya@techm.com", 24, 4.0),
-  createData("ManojKumar234", "Chaithanya Nimmala", "JP Morgan", "Business Lines", "chaithanya@techm.com", 24, 4.0),
+  createData(
+    "ManojKumar234",
+    "Chaithanya Nimmala",
+    "Tech M",
+    "Business Cloud Computing",
+    "chaithanya@techm.com",
+    24,
+    4.0
+  ),
+  createData(
+    "ManojKumar234",
+    "Chaithanya Nimmala",
+    "IBM",
+    "SIP Trunk",
+    "chaithanya@techm.com",
+    24,
+    4.0
+  ),
+  createData(
+    "ManojKumar234",
+    "Chaithanya Nimmala",
+    "JP Morgan",
+    "Business Lines",
+    "chaithanya@techm.com",
+    24,
+    4.0
+  ),
 ];
 
 const Lead = () => {
@@ -130,7 +155,7 @@ const Lead = () => {
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [stateValue, setStateValue] = useState("");
-  const [zip, setZip] = useState(""); 
+  const [zip, setZip] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -153,8 +178,8 @@ const Lead = () => {
 
   const useStyles = makeStyles({
     input: {
-      color: "red"
-    }
+      color: "red",
+    },
   });
 
   function onChange(value) {
@@ -193,11 +218,12 @@ const Lead = () => {
         <Grid item xs={5}>
           <img src={brspdlogo} alt="logo" className="img-brightspeed-login" />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <h1 className="sales-porttal-heading">Sales Order Portal</h1>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3} className="logged-in-user-settings">
           <h5 className="loggedin-user">Chaithanya Nimmala</h5>
+          <img src={SettingIcon} className="setting-icon" />
         </Grid>
       </Grid>
 
@@ -359,7 +385,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: '100%' }}
+                        sx={{ width: "100%" }}
                         error={leadOwner.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">
@@ -397,7 +423,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: '100%' }}
+                        sx={{ width: "100%" }}
                         error={leadStatus.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">
@@ -435,7 +461,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: '100%' }}
+                        sx={{ width: "100%" }}
                         error={servicePlan.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-checkbox-label">
@@ -473,7 +499,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <TextField
-                      inputProps={{ className: classes.input }}
+                        inputProps={{ className: classes.input }}
                         required
                         fullWidth
                         label="Email Id"
@@ -525,7 +551,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: '100%' }}
+                        sx={{ width: "100%" }}
                         error={
                           internetService.length === 0 && isSubmit === true
                         }
@@ -647,7 +673,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: '100%' }}
+                        sx={{ width: "100%" }}
                         error={callStatus.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">
