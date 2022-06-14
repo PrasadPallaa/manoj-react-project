@@ -26,6 +26,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
+import { makeStyles } from "@material-ui/core/styles";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -150,6 +151,12 @@ const Lead = () => {
     setValue(newValue);
   };
 
+  const useStyles = makeStyles({
+    input: {
+      color: "red"
+    }
+  });
+
   function onChange(value) {
     console.log("Captcha value:", value);
   }
@@ -177,6 +184,8 @@ const Lead = () => {
       typeof value === "string" ? value.split(",") : value
     );
   };
+
+  const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -350,7 +359,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 705 }}
+                        sx={{ width: '100%' }}
                         error={leadOwner.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">
@@ -388,7 +397,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 705 }}
+                        sx={{ width: '100%' }}
                         error={leadStatus.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">
@@ -426,7 +435,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 650 }}
+                        sx={{ width: '100%' }}
                         error={servicePlan.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-checkbox-label">
@@ -464,6 +473,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <TextField
+                      inputProps={{ className: classes.input }}
                         required
                         fullWidth
                         label="Email Id"
@@ -515,7 +525,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 650 }}
+                        sx={{ width: '100%' }}
                         error={
                           internetService.length === 0 && isSubmit === true
                         }
@@ -637,7 +647,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 705 }}
+                        sx={{ width: '100%' }}
                         error={callStatus.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-name-label">

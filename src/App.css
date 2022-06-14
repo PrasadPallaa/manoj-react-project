@@ -1309,7 +1309,7 @@ li {
   border-radius: 10px !important;
   width: 150px !important;
   color: black !important;
-  background-color:  #ffc800 !important;
+  background-color: #ffc800 !important;
   text-transform: none !important;
   margin: 5px !important;
 }
@@ -1640,7 +1640,6 @@ a {
   margin: 1rem;
 }
 
-
 .css-heg063-MuiTabs-flexContainer {
   display: flex !important;
   border: 2px solid #e3e0e0 !important;
@@ -1681,4 +1680,16 @@ a {
 
 .sales-order-table {
   margin-top: 1rem !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background-color: #ffc800 !important;
+  color: black !important;
+  border-radius: 10px !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: none !important;
+  border: none !important;
+  display: none !important;
 }
