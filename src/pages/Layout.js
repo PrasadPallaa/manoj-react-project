@@ -3,9 +3,11 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import React from "react";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import gradiant from "../images/Branding/logos_2/gradiant-desktop.png";
+import SettingIcon from "../images/Branding/09 Icon Library/PNG/settings.png";
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -47,6 +49,8 @@ const StyledMenu = styled.nav`
 `;
 
 const Menu = ({ open }) => {
+  const pathname = window.location.pathname;
+  console.log(pathname);
   return (
     <StyledMenu open={open}>
       <a href="/">
@@ -71,6 +75,19 @@ const Menu = ({ open }) => {
         <span role="img" aria-label="contact"></span>
         Sign In
       </a>
+
+      {pathname !== "/home/lead" ? (
+        <a href="/">
+          <span role="img" aria-label="contact"></span>
+          Sign In
+        </a>
+      ) : (
+        <a href="/">
+          <span role="img" aria-label="contact"></span>
+          Chaithanya Nimmala
+          <img src={SettingIcon} className="setting-icon" />
+        </a>
+      )}
     </StyledMenu>
   );
 };
@@ -127,9 +144,15 @@ const Burger = ({ open, setOpen }) => {
   );
 };
 
-const Layout = () => {
+const Layout = (props) => {
+  console.log(props);
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
+  const pathname = window.location.pathname;
+  
+  useEffect(() => {
+    console.log(pathname);
+  }, []);
 
   return (
     <>
@@ -146,36 +169,41 @@ const Layout = () => {
           </div>
           <Navbar.Collapse
             className="justify-content-end"
-            style={{ width: "100%", marginRight: "1rem" }}
+            style={{ width: "100%" }}
           >
             <div className="navbar-items">
-            <Nav
-              style={{
-                marginRight: "2rem",
-                fontWeight: "500",
-                color: "black",
-              }}
-            >
-              <Nav.Link href="/">
-                <strong></strong> For Home
-              </Nav.Link>
-              <NavDropdown title="For Business" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">
-                  Small Business Internet
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#">
-                  Small Business Voice
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/mid-enterprise">
-                  Mid-Enterprise
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#">Public Sector</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="/contact">About Us</Nav.Link>
-              <Nav.Link href="#">Sign In</Nav.Link>
-            </Nav>
+              <Nav
+                style={{
+                  fontWeight: "500",
+                  color: "black",
+                }}
+              >
+                <Nav.Link href="/">
+                  <strong></strong> For Home
+                </Nav.Link>
+                <NavDropdown title="For Business" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#">
+                    Small Business Internet
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">
+                    Small Business Voice
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/mid-enterprise">
+                    Mid-Enterprise
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">Public Sector</NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link href="/contact">About Us</Nav.Link>
+                {pathname !== "/home/lead" ? (
+                  <Nav.Link href="#">Sign In</Nav.Link>
+                ) : (
+                  <Nav.Link href="#">
+                    Chaithanya Nimmala
+                    <img src={SettingIcon} className="setting-icon" />
+                  </Nav.Link>
+                )}
+              </Nav>
             </div>
-            
           </Navbar.Collapse>
         </Navbar>
 

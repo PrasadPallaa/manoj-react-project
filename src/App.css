@@ -925,6 +925,10 @@ li {
   margin-bottom: 5rem;
 }
 
+.login-about-brightspeed {
+  background-color: white;
+}
+
 .logo-header {
   margin-left: 4rem;
 }
@@ -1631,13 +1635,15 @@ a {
 
 .sales-porttal-heading {
   margin: 1rem;
+  font-family: serif;
 }
 
 .tab-panle-sales-portal {
-  margin-top: 2rem;
-  /* border: 1px solid #e3d6d6; */
+  border: 3px solid #8f8a8a;
+  border-radius: 10px;
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 0.8rem;
+  background-color: white;
 }
 
 .css-heg063-MuiTabs-flexContainer {
@@ -1656,6 +1662,7 @@ a {
   margin-top: 13px !important;
   margin-left: 5px !important;
   border: 1px solid gray !important;
+  height: 3.7rem !important;
 }
 .go-button:hover {
   color: black !important;
@@ -1668,7 +1675,7 @@ a {
   color: black !important;
   background-color: #ffc800 !important;
   text-transform: none !important;
-  height: 3rem !important;
+  height: 3.7rem !important;
 }
 
 .new-button-container {
@@ -1682,10 +1689,14 @@ a {
   margin-top: 1rem !important;
 }
 
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  text-transform: none !important;
+}
+
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
   background-color: #ffc800 !important;
   color: black !important;
-  border-radius: 10px !important;
+  text-transform: none !important;
 }
 
 .css-1aquho2-MuiTabs-indicator {
@@ -1694,14 +1705,28 @@ a {
   display: none !important;
 }
 
+
+
 .setting-icon {
   width: 25px;
   height: 25px;
-  margin-top: 1rem;
+  margin-left: 10px;
 }
 
 .logged-in-user-settings {
   display: flex !important;
   margin-top: 1rem !important;
   justify-content: end !important;
+}
+
+.css-1gsv261 {
+  border-bottom: none !important;
+  border-color: rgba(0, 0, 0, 0.12);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+}
+
+.sales-order-portal {
+  margin-top: 4rem !important;
 }

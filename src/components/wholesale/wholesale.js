@@ -13,6 +13,9 @@ import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import DownArrow from "../../images/Branding/logos_2/980c46c6-cb9f-47d8-b27b-f3401c5fb813.png";
 import brightSpeedImage from "../../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098766/RF_GettyImages-1359098766_Purchased 2.11.png";
+import Layout from '../../pages/Layout';
+import Navbar from "../../components/navbar";
+
 
 const WholeSale = () => {
   const [open1, setOpen1] = React.useState(true);
@@ -97,6 +100,8 @@ const WholeSale = () => {
 
   return (
     <React.Fragment>
+      <Navbar />
+      <Layout />
       <NavbarBottom />
       <h1 id="voice-and-voip" className="voip-product">
         VoIP Products

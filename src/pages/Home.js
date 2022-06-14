@@ -7,6 +7,8 @@ import brspdlogo from "../images/Branding/01 Logo/Logo/Full Color/Digital/Bright
 import twitter from "../images/Branding/logos_2/twitter_1.png";
 import fb from "../images/Branding/logos_2/fb.png";
 import linkedIn from "../images/Branding/logos_2/linkedIn.png";
+import Layout from '../pages/Layout';
+import Navbar from '../components/navbar'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,6 +39,9 @@ TabPanel.propTypes = {
 const Home = () => {
   return (
     <React.Fragment>
+              <Navbar />
+
+      <Layout />
       <div className="home">
         <div class="image-header">
           Taking care of <br /> business where <br /> you live

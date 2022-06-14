@@ -13,11 +13,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import React, { useState } from "react";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
-import ReCAPTCHA from "react-google-recaptcha";
 import { useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -27,7 +24,10 @@ import Select from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
-import SettingIcon from "../images/Branding/09 Icon Library/PNG/settings.png";
+import twitter from "../images/Branding/logos_2/twitter_1.png";
+import fb from "../images/Branding/logos_2/fb.png";
+import linkedIn from "../images/Branding/logos_2/linkedIn.png";
+import Layout from './Layout';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -64,8 +64,6 @@ const callStatusData = [
 ];
 
 const leadOwnerData = ["John", "David", "Tracy"];
-
-const contactInfo = ["Email", "Phone"];
 
 function getStyles(name, personName, theme) {
   return {
@@ -147,7 +145,6 @@ const rows = [
 
 const Lead = () => {
   const [value, setValue] = React.useState(0);
-  const [checked, setChecked] = React.useState(false);
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   const [firstName, setFirstName] = useState("");
@@ -212,18 +209,22 @@ const Lead = () => {
 
   const classes = useStyles();
 
+  const pathname = window.location.pathname;
+  console.log(pathname);
+
   return (
     <React.Fragment>
+      <Layout />
       <Grid container spacing={2}>
         <Grid item xs={5}>
-          <img src={brspdlogo} alt="logo" className="img-brightspeed-login" />
+          {/* <img src={brspdlogo} alt="logo" className="img-brightspeed-login" /> */}
         </Grid>
         <Grid item xs={4}>
           <h1 className="sales-porttal-heading">Sales Order Portal</h1>
         </Grid>
         <Grid item xs={3} className="logged-in-user-settings">
-          <h5 className="loggedin-user">Chaithanya Nimmala</h5>
-          <img src={SettingIcon} className="setting-icon" />
+          {/* <h5 className="loggedin-user">Chaithanya Nimmala</h5>
+          <img src={SettingIcon} className="setting-icon" /> */}
         </Grid>
       </Grid>
 
@@ -301,12 +302,12 @@ const Lead = () => {
                             <TableHead>
                               <TableRow>
                                 <TableCell>Lead Id</TableCell>
-                                <TableCell align="right">Name</TableCell>
-                                <TableCell align="right">Company</TableCell>
-                                <TableCell align="right">Product</TableCell>
-                                <TableCell align="right">Email Id</TableCell>
-                                <TableCell align="right">Lead Status</TableCell>
-                                <TableCell align="right">Lead Owner</TableCell>
+                                <TableCell>Customer Name</TableCell>
+                                <TableCell>Legal entity Name</TableCell>
+                                <TableCell>Product</TableCell>
+                                <TableCell>Customer Email Id</TableCell>
+                                <TableCell>Lead Status</TableCell>
+                                <TableCell>Lead Owner</TableCell>
                               </TableRow>
                             </TableHead>
                             <TableBody>
@@ -322,20 +323,20 @@ const Lead = () => {
                                   <TableCell component="th" scope="row">
                                     {row.name}
                                   </TableCell>
-                                  <TableCell align="right">
+                                  <TableCell>
                                     {row.calories}
                                   </TableCell>
-                                  <TableCell align="right">{row.fat}</TableCell>
-                                  <TableCell align="right">
+                                  <TableCell>{row.fat}</TableCell>
+                                  <TableCell>
                                     {row.carbs}
                                   </TableCell>
-                                  <TableCell align="right">
+                                  <TableCell>
                                     {row.protein}
                                   </TableCell>
-                                  <TableCell align="right">
+                                  <TableCell>
                                     {row.leadStatus}
                                   </TableCell>
-                                  <TableCell align="right">
+                                  <TableCell>
                                     {row.leadOwner}
                                   </TableCell>
                                 </TableRow>
@@ -367,20 +368,6 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <label>Lead Id*:</label>
-                      {/* <TextField
-                        required
-                        fullWidth
-                        label="Lead Id"
-                        id="leadId"
-                        value={leadId}
-                        onChange={(event) => setLeadId(event.target.value)}
-                        error={leadId === "" && isSubmit === true}
-                        helperText={
-                          leadId === "" && isSubmit === true
-                            ? "This field is required!"
-                            : " "
-                        }
-                      /> */}
                     </Grid>
 
                     <Grid item xs={6}>
@@ -779,6 +766,65 @@ const Lead = () => {
           </Grid>
         </Grid>
       </div>
+
+      <Grid container spacing={2} className="about-brightspeed sales-order-portal">
+          <Grid item xs={12} sm={6} lg={4}>
+            <ul className="list-customers">
+              <strong>
+                <li className="header-list">For Customers</li>
+              </strong>
+              <li>Customers With Disablities</li>
+              <li>Support</li>
+            </ul>
+          </Grid>
+          <Grid item xs={12} sm={6} lg={4}>
+            <ul className="list-customers-carrers">
+              <strong>
+                <li className="header-list">About Brightspeed</li>
+              </strong>
+              <li>Careers</li>
+              <li>Newsroom</li>
+              <li>Contact Us</li>
+              <li>Wholesale</li>
+              <li>Partner Program</li>
+            </ul>
+          </Grid>
+          <Grid item xs={12} sm={6} lg={4}>
+            <div  className="brightspeed-footer-content">
+            <div className="social-icons">
+              <img
+                src={brspdlogo}
+                alt="logo"
+                width="70%"
+                className="img-brightspeed"
+              />
+              <h5 className="follow-us">FOLLOW US</h5>
+              <img alt="twitter" src={twitter} className="logo-social" />
+              <img alt="fb" src={fb} className="logo-social" />
+              <img alt="linkedIn" src={linkedIn} className="logo-social" />
+            </div>
+
+            <div className="rights-content">
+              <p className="font-size-copyright">
+                <span>&#169;</span> 2022 Brightspeed. All rights reserved.
+              </p>
+              <p className="font-size-copyright-data">
+                {" "}
+                <strong>Legal Notices |</strong>{" "}
+                <strong>Privacy Policy |</strong>{" "}
+                <strong>Cookie Settings</strong>{" "}
+              </p>
+
+              <ul className="font-size-copyright-notices">
+                <li>Legal Notices</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Settings</li>
+              </ul>
+            </div>
+            </div>  
+
+          </Grid>
+        </Grid> 
     </React.Fragment>
   );
 };

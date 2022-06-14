@@ -16,31 +16,26 @@ import Voice from "./components/enterprise/voice";
 import Login from "./components/login/login";
 import Lead from "./pages/leadPage";
 
-
 export default function App(props) {
   const pathname = window.location.pathname;
   console.log(pathname);
   return (
     <>
       <BrowserRouter>
-        {(pathname !== "/login") ? <Navbar /> : ""}
         <Routes>
-          {(pathname !== "/login" || pathname !== "/home/lead") && (
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="companyheader" element={<CompanyHeader />} />
-              <Route path="ew/enterprise" element={<Enterprisevoice />} />
-              <Route path="ew/enterprise/voice" element={<Voice />} />
-              <Route path="ew/wholesale/voice" element={<WholeSale />} />
-              <Route path="mid-enterprise" element={<MidEnterprise />} />
-              <Route path="products" element={<Productctlg />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          )}
+          <Route path="/" element={<Layout />} />
+          <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="home/lead" element={<Lead />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="companyheader" element={<CompanyHeader />} />
+          <Route path="ew/enterprise" element={<Enterprisevoice />} />
+          <Route path="ew/enterprise/voice" element={<Voice />} />
+          <Route path="ew/wholesale/voice" element={<WholeSale />} />
+          <Route path="mid-enterprise" element={<MidEnterprise />} />
+          <Route path="products" element={<Productctlg />} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </>
