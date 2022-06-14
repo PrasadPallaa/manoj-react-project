@@ -1314,6 +1314,15 @@ li {
   margin: 5px !important;
 }
 
+.quote-button-quote {
+  padding: 1.2rem !important;
+  border-radius: 35px !important;
+  width: 150px !important;
+  color: black !important;
+  background-color: #fa783c !important;
+  text-transform: none !important;
+}
+
 .login-button-login {
   padding: 1.2rem !important;
   border-radius: 35px !important;

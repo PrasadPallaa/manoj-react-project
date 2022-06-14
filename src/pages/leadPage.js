@@ -43,6 +43,26 @@ const names = ["Business Cloud Computing", "SIP Trunk", "Business Lines"];
 
 const servicePlanData = ["Yes", "No"];
 
+const leadsData = ["My Leads", "All Leads"];
+
+const leadStatusData = [
+  "New",
+  "Assigned to Agent",
+  "Rejected/Cancelled",
+  "Qualify Complete",
+];
+
+const callStatusData = [
+  "Open",
+  "Call Back Later",
+  "Invalid Number",
+  "No Answer",
+  "Call Completed",
+  "Not Interested",
+];
+
+const leadOwnerData = ["John", "David", "Tracy"];
+
 const contactInfo = ["Email", "Phone"];
 
 function getStyles(name, personName, theme) {
@@ -53,12 +73,6 @@ function getStyles(name, personName, theme) {
         : theme.typography.fontWeightMedium,
   };
 }
-
-// interface TabPanelProps {
-//     children?: React.ReactNode;
-//     index: number;
-//     value: number;
-//   }
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -100,11 +114,9 @@ function createData(
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3, 24, 4.0),
-  createData("Eclair", 262, 16.0, 24, 6.0, 24, 4.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3, 24, 4.0),
-  createData("Gingerbread", 356, 16.0, 49, 3.9, 24, 4.0),
+  createData("ManojKumar234", "Chaithanya Nimmala", "Tech M", "Business Cloud Computing", "chaithanya@techm.com", 24, 4.0),
+  createData("ManojKumar234", "Chaithanya Nimmala", "IBM", "SIP Trunk", "chaithanya@techm.com", 24, 4.0),
+  createData("ManojKumar234", "Chaithanya Nimmala", "JP Morgan", "Business Lines", "chaithanya@techm.com", 24, 4.0),
 ];
 
 const Lead = () => {
@@ -113,16 +125,21 @@ const Lead = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   const [firstName, setFirstName] = useState("");
+  const [leadId, setLeadId] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [stateValue, setStateValue] = useState("");
-  const [zip, setZip] = useState("");
+  const [zip, setZip] = useState(""); 
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [servicePlan, setServicePlan] = useState([]);
   const [noOfUsers, setNoOfUser] = useState("");
   const [internetService, setInternetService] = useState([]);
+  const [myLeads, setMyLeads] = useState(["My Leads"]);
+  const [leadStatus, setLeadStatus] = useState(["New"]);
+  const [leadOwner, setLeadOwner] = useState([]);
+  const [callStatus, setCallStatus] = useState([]);
   const [contactAgent, setContactAgent] = useState([]);
   const [ban, setBan] = useState("");
   const [isSubmit, setIsSubmit] = React.useState(false);
@@ -196,11 +213,41 @@ const Lead = () => {
                   <>
                     <Grid container spacing={2}>
                       <Grid item>
-                        <TextField
-                          label="View"
-                          id="leads"
-                          placeholder="My Leads"
-                        />
+                        <FormControl
+                          sx={{ width: 350 }}
+                          error={myLeads.length === 0 && isSubmit === true}
+                        >
+                          <InputLabel id="demo-multiple-name-label">
+                            View
+                          </InputLabel>
+                          <Select
+                            labelId="demo-multiple-name-label"
+                            id="demo-multiple-name"
+                            input={<OutlinedInput label="View" />}
+                            MenuProps={MenuProps}
+                            value={myLeads}
+                            onChange={(event) => {
+                              setMyLeads(event.target.value);
+                            }}
+                          >
+                            {leadsData.map((name) => (
+                              <MenuItem
+                                key={name}
+                                value={name}
+                                style={getStyles(name, personName, theme)}
+                              >
+                                {name}
+                              </MenuItem>
+                            ))}
+                          </Select>
+                          {myLeads.length === 0 && isSubmit === true ? (
+                            <FormHelperText>
+                              This field is required!
+                            </FormHelperText>
+                          ) : (
+                            ""
+                          )}
+                        </FormControl>
                       </Grid>
                       <Button className="go-button"> Go</Button>
                       <div className="new-button-container">
@@ -284,57 +331,102 @@ const Lead = () => {
                     </Grid>
 
                     <Grid item xs={6}>
-                      <TextField
+                      <label>Lead Id*:</label>
+                      {/* <TextField
                         required
                         fullWidth
                         label="Lead Id"
                         id="leadId"
-                        value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
-                        error={firstName === "" && isSubmit === true}
+                        value={leadId}
+                        onChange={(event) => setLeadId(event.target.value)}
+                        error={leadId === "" && isSubmit === true}
                         helperText={
-                          firstName === "" && isSubmit === true
+                          leadId === "" && isSubmit === true
                             ? "This field is required!"
                             : " "
                         }
-                      />
+                      /> */}
                     </Grid>
 
                     <Grid item xs={6}>
-                      <TextField
-                        required
-                        fullWidth
-                        label="Lead Owner"
-                        id="leadOwner"
-                        value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
-                        error={firstName === "" && isSubmit === true}
-                        helperText={
-                          firstName === "" && isSubmit === true
-                            ? "This field is required!"
-                            : " "
-                        }
-                      />
+                      <FormControl
+                        sx={{ width: 705 }}
+                        error={leadOwner.length === 0 && isSubmit === true}
+                      >
+                        <InputLabel id="demo-multiple-name-label">
+                          Lead Owner
+                        </InputLabel>
+                        <Select
+                          labelId="demo-multiple-name-label"
+                          id="demo-multiple-name"
+                          input={<OutlinedInput label="Lead Status" />}
+                          MenuProps={MenuProps}
+                          value={leadOwner}
+                          onChange={(event) => {
+                            setLeadOwner(event.target.value);
+                          }}
+                        >
+                          {leadOwnerData.map((name) => (
+                            <MenuItem
+                              key={name}
+                              value={name}
+                              style={getStyles(name, personName, theme)}
+                            >
+                              {name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        {leadOwner.length === 0 && isSubmit === true ? (
+                          <FormHelperText>
+                            This field is required!
+                          </FormHelperText>
+                        ) : (
+                          ""
+                        )}
+                      </FormControl>
                     </Grid>
-                    <Grid item xs={6}>
-                      <TextField
-                        required
-                        fullWidth
-                        label="Lead Status"
-                        id="leadStatus"
-                        value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
-                        error={firstName === "" && isSubmit === true}
-                        helperText={
-                          firstName === "" && isSubmit === true
-                            ? "This field is required!"
-                            : " "
-                        }
-                      />
-                    </Grid>
+
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 895 }}
+                        sx={{ width: 705 }}
+                        error={leadStatus.length === 0 && isSubmit === true}
+                      >
+                        <InputLabel id="demo-multiple-name-label">
+                          Lead Status
+                        </InputLabel>
+                        <Select
+                          labelId="demo-multiple-name-label"
+                          id="demo-multiple-name"
+                          input={<OutlinedInput label="Lead Status" />}
+                          MenuProps={MenuProps}
+                          value={leadStatus}
+                          onChange={(event) => {
+                            setLeadStatus(event.target.value);
+                          }}
+                        >
+                          {leadStatusData.map((name) => (
+                            <MenuItem
+                              key={name}
+                              value={name}
+                              style={getStyles(name, personName, theme)}
+                            >
+                              {name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        {leadStatus.length === 0 && isSubmit === true ? (
+                          <FormHelperText>
+                            This field is required!
+                          </FormHelperText>
+                        ) : (
+                          ""
+                        )}
+                      </FormControl>
+                    </Grid>
+
+                    <Grid item xs={6}>
+                      <FormControl
+                        sx={{ width: 650 }}
                         error={servicePlan.length === 0 && isSubmit === true}
                       >
                         <InputLabel id="demo-multiple-checkbox-label">
@@ -423,7 +515,7 @@ const Lead = () => {
 
                     <Grid item xs={6}>
                       <FormControl
-                        sx={{ width: 895 }}
+                        sx={{ width: 650 }}
                         error={
                           internetService.length === 0 && isSubmit === true
                         }
@@ -544,20 +636,41 @@ const Lead = () => {
                     </Grid>
 
                     <Grid item xs={6}>
-                      <TextField
-                        required
-                        fullWidth
-                        label="Call Status"
-                        id="callStatus"
-                        value={phoneNumber}
-                        onChange={(event) => setPhoneNumber(event.target.value)}
-                        error={phoneNumber === "" && isSubmit === true}
-                        helperText={
-                          phoneNumber === "" && isSubmit === true
-                            ? "This field is required!"
-                            : " "
-                        }
-                      />
+                      <FormControl
+                        sx={{ width: 705 }}
+                        error={callStatus.length === 0 && isSubmit === true}
+                      >
+                        <InputLabel id="demo-multiple-name-label">
+                          Call Status
+                        </InputLabel>
+                        <Select
+                          labelId="demo-multiple-name-label"
+                          id="demo-multiple-name"
+                          input={<OutlinedInput label="Call Status" />}
+                          MenuProps={MenuProps}
+                          value={callStatus}
+                          onChange={(event) => {
+                            setCallStatus(event.target.value);
+                          }}
+                        >
+                          {callStatusData.map((name) => (
+                            <MenuItem
+                              key={name}
+                              value={name}
+                              style={getStyles(name, personName, theme)}
+                            >
+                              {name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                        {callStatus.length === 0 && isSubmit === true ? (
+                          <FormHelperText>
+                            This field is required!
+                          </FormHelperText>
+                        ) : (
+                          ""
+                        )}
+                      </FormControl>
                     </Grid>
 
                     <Grid item xs={6}>
@@ -595,7 +708,9 @@ const Lead = () => {
                         }
                       />
                     </Grid>
+
                     <Grid item xs={6}></Grid>
+
                     <Grid item xs={6}>
                       <TextField
                         required
