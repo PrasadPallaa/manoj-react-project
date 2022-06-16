@@ -3,19 +3,15 @@ import Form from "react-bootstrap/Form";
 import Grid from "@mui/material/Grid";
 import NavbarBottom from "../bottom-navbar";
 import RequestInfo from "../enterprise/requestInfo";
-import twitter from "../../images/Branding/logos_2/twitter_1.png";
-import fb from "../../images/Branding/logos_2/fb.png";
-import linkedIn from "../../images/Branding/logos_2/linkedIn.png";
-import brspdlogo from "../../images/Branding/01 Logo/Logo/Full Color/Digital/Brightspeed_Logo_Full_Color_RGB_864px@72ppi.png";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import DownArrow from "../../images/Branding/logos_2/980c46c6-cb9f-47d8-b27b-f3401c5fb813.png";
 import brightSpeedImage from "../../images/Branding/Image Library/Brightspeed Image Library_Commercial_Retouched/RF_GettyImages-1359098766/RF_GettyImages-1359098766_Purchased 2.11.png";
-import Layout from '../../pages/Layout';
+import Layout from "../../pages/Layout";
 import Navbar from "../../components/navbar";
-
+import Footer from "../../pages/footer";
 
 const WholeSale = () => {
   const [open1, setOpen1] = React.useState(true);
@@ -119,7 +115,6 @@ const WholeSale = () => {
             onClick={handleClick1}
             className={open1 ? "bcc-selected" : ""}
           >
-            {/* <ListItemIcon>{open1 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText
               primary={
                 open1 ? (
@@ -134,7 +129,6 @@ const WholeSale = () => {
             onClick={handleClick2}
             className={open2 ? "bcc-selected" : ""}
           >
-            {/* <ListItemIcon>{open2 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText
               primary={open2 ? <strong>SIP Trunk</strong> : "SIP Trunk"}
             />
@@ -143,7 +137,6 @@ const WholeSale = () => {
             onClick={handleClick3}
             className={open3 ? "bcc-selected" : ""}
           >
-            {/* <ListItemIcon>{open3 ? <SendIcon /> : ""}</ListItemIcon> */}
             <ListItemText
               primary={
                 open3 ? <strong>Business Lines</strong> : "Business Lines"
@@ -280,25 +273,25 @@ const WholeSale = () => {
                 accomplish what is most important to them. Our goal, over the
                 next several years, is to build a next-gen fiber optics–based
                 network to power Internet access for the communities we will be
-                privileged to serve. <br /> <br /> Brightspeed was formed by the agreement
-                reached in August 2021 between Connect Holding LLC and Lumen
-                Technologies, Inc. for Apollo Global Management, Inc. to acquire
-                certain telecom assets and operations from Lumen. Our network
-                will serve more than 6 million homes and businesses in 20
-                states, primarily in the Midwest and Southeast portions of the
-                U.S.  <br /> <br /> What truly excites us is the chance to bring the best
-                technology to communities, particularly in rural and suburban
-                America, who have not always had the choices in Internet
-                providers that they need and deserve. <br /> <br /> We hope you will come to
-                know us as the kind of people who wake up every morning thinking
-                about better ways to provide the best, most reliable service to
-                consumers and businesses, big and small. We’re committed to
-                building a smart network for customers who want consistently
-                fast Internet, at a great value, delivered through a customer
-                experience that makes staying connected  <br /> <br /> We
-                understand that Internet access powers life. We’re about keeping
-                you connected, so you can work, learn, play, and accomplish what
-                matters most.
+                privileged to serve. <br /> <br /> Brightspeed was formed by the
+                agreement reached in August 2021 between Connect Holding LLC and
+                Lumen Technologies, Inc. for Apollo Global Management, Inc. to
+                acquire certain telecom assets and operations from Lumen. Our
+                network will serve more than 6 million homes and businesses in
+                20 states, primarily in the Midwest and Southeast portions of
+                the U.S. <br /> <br /> What truly excites us is the chance to
+                bring the best technology to communities, particularly in rural
+                and suburban America, who have not always had the choices in
+                Internet providers that they need and deserve. <br /> <br /> We
+                hope you will come to know us as the kind of people who wake up
+                every morning thinking about better ways to provide the best,
+                most reliable service to consumers and businesses, big and
+                small. We’re committed to building a smart network for customers
+                who want consistently fast Internet, at a great value, delivered
+                through a customer experience that makes staying connected{" "}
+                <br /> <br /> We understand that Internet access powers life.
+                We’re about keeping you connected, so you can work, learn, play,
+                and accomplish what matters most.
               </p>
             ) : (
               ""
@@ -321,16 +314,17 @@ const WholeSale = () => {
                 As more and more of our country’s commerce, workforce norms,
                 education systems, health care platforms, and entertainment
                 choices gravitate online, the need for faster, more reliable
-                Internet access is imperative. <br /> <br /> Technology is the key to our
-                digital future, and we believe all current and prospective
-                customers should have access to the best Internet service
-                possible, whether they are connected to our legacy copper
-                network or our new fiber platform. We are fierce advocates for
-                more accessible, inclusive, and high-quality Internet, and
-                believe that doing so promotes equity in the communities we
-                serve.<br /> <br /> We are taking a bold view of this opportunity and are
-                confident in our ability to deliver. We plan to build fiber to
-                up to 3 million locations over the next 5 years.
+                Internet access is imperative. <br /> <br /> Technology is the
+                key to our digital future, and we believe all current and
+                prospective customers should have access to the best Internet
+                service possible, whether they are connected to our legacy
+                copper network or our new fiber platform. We are fierce
+                advocates for more accessible, inclusive, and high-quality
+                Internet, and believe that doing so promotes equity in the
+                communities we serve.
+                <br /> <br /> We are taking a bold view of this opportunity and
+                are confident in our ability to deliver. We plan to build fiber
+                to up to 3 million locations over the next 5 years.
               </p>
             ) : (
               ""
@@ -359,10 +353,11 @@ const WholeSale = () => {
                 sending information from the home or business, like during a
                 video conference) as fast as downstream speeds (speeds coming to
                 the home or business). It’s interactive and two-way fast, just
-                like life! <br /><br /> We’re more than just a technology company. We want
-                people and businesses to experience simplicity, reliability, and
-                choice when they do business with Brightspeed, and to trust us
-                to successfully handle their most important connections.
+                like life! <br />
+                <br /> We’re more than just a technology company. We want people
+                and businesses to experience simplicity, reliability, and choice
+                when they do business with Brightspeed, and to trust us to
+                successfully handle their most important connections.
               </p>
             ) : (
               ""
@@ -386,9 +381,10 @@ const WholeSale = () => {
                   We expect to be open for business in the second half of 2022.
                   We know that the time will pass by at light speed. So check
                   out our map to see the states where we will be offering
-                  services. <br /><br /> In the meantime, let’s keep in touch. Just provide
-                  your email address, and we will keep you posted on all the
-                  latest news and updates.
+                  services. <br />
+                  <br /> In the meantime, let’s keep in touch. Just provide your
+                  email address, and we will keep you posted on all the latest
+                  news and updates.
                 </p>
                 <Form.Control
                   type="email"
@@ -423,9 +419,12 @@ const WholeSale = () => {
                 the lives of our employees and our customers. The investment and
                 transformation we are planning are bold, so we are seeking bold
                 thinkers, innovators, doers, and collaborative leaders to help
-                us shape this journey. <br /> <br /> <br /> To see what spots are currently
-                available, please visit our careers site:
-                <a href="https://careers.smartrecruiters.com/Brightspeed" className="anchor-bright">
+                us shape this journey. <br /> <br /> <br /> To see what spots
+                are currently available, please visit our careers site:
+                <a
+                  href="https://careers.smartrecruiters.com/Brightspeed"
+                  className="anchor-bright"
+                >
                   https://careers.smartrecruiters.com/Brightspeed
                 </a>
               </p>
@@ -459,63 +458,7 @@ const WholeSale = () => {
 
       <hr className="horizontal-line" />
 
-      <Grid container spacing={2} className="about-brightspeed">
-        <Grid item xs={12} sm={6} lg={4}>
-          <ul className="list-customers">
-            <strong>
-              <li className="header-list">For Customers</li>
-            </strong>
-            <li>Customers With Disablities</li>
-            <li>Support</li>
-          </ul>
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <ul className="list-customers-carrers">
-            <strong>
-              <li className="header-list">About Brightspeed</li>
-            </strong>
-            <li>Careers</li>
-            <li>Newsroom</li>
-            <li>Contact Us</li>
-            <li>Wholesale</li>
-            <li>Partner Program</li>
-          </ul>
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <div className="brightspeed-footer-content">
-            <div className="social-icons">
-              <img
-                src={brspdlogo}
-                alt="logo"
-                width="70%"
-                className="img-brightspeed"
-              />
-              <h5 className="follow-us">FOLLOW US</h5>
-              <img alt="twitter" src={twitter} className="logo-social" />
-              <img alt="fb" src={fb} className="logo-social" />
-              <img alt="linkedIn" src={linkedIn} className="logo-social" />
-            </div>
-
-            <div className="rights-content">
-              <p className="font-size-copyright">
-                <span>&#169;</span> 2022 Brightspeed. All rights reserved.
-              </p>
-              <p className="font-size-copyright-data">
-                {" "}
-                <strong>Legal Notices |</strong>{" "}
-                <strong>Privacy Policy |</strong>{" "}
-                <strong>Cookie Settings</strong>{" "}
-              </p>
-
-              <ul className="font-size-copyright-notices">
-                <li>Legal Notices</li>
-                <li>Privacy Policy</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-          </div>
-        </Grid>
-      </Grid>
+      <Footer />
     </React.Fragment>
   );
 };

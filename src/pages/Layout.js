@@ -3,8 +3,6 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import React from "react";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import gradiant from "../images/Branding/logos_2/gradiant-desktop.png";
 import SettingIcon from "../images/Branding/09 Icon Library/PNG/settings.png";
@@ -145,14 +143,9 @@ const Burger = ({ open, setOpen }) => {
 };
 
 const Layout = (props) => {
-  console.log(props);
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
   const pathname = window.location.pathname;
-  
-  useEffect(() => {
-    console.log(pathname);
-  }, []);
 
   return (
     <>
@@ -207,7 +200,6 @@ const Layout = (props) => {
           </Navbar.Collapse>
         </Navbar>
 
-        {/* <hr style={mystyle} /> */}
         <img alt="gradiant" src={gradiant} className="gradiant-image" />
       </div>
 

@@ -21,7 +21,7 @@ const steps = [
   },
 ];
 
-export default function Test4Form({ childToParent4 }) {
+export default function DispatchForm({ childToParent4 }) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [lName, setLastName] = React.useState("");
   const [fName, setFirstName] = React.useState("");

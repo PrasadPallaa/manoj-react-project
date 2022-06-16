@@ -18,18 +18,6 @@ import ListItemText from "@mui/material/ListItemText";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 
-// const names = [
-//   'Oliver Hansen',
-//   'Van Henry',
-//   'April Tucker',
-//   'Ralph Hubbard',
-//   'Omar Alexander',
-//   'Carlos Abbott',
-//   'Miriam Wagner',
-//   'Bradley Wilkerson',
-//   'Virginia Andrews',
-//   'Kelly Snyder',
-// ];
 const MenuProps = {
   PaperProps: {
     style: {
@@ -55,7 +43,6 @@ function getStyles(name, personName, theme) {
 }
 
 const RequestInfo = () => {
-  const [checked, setChecked] = React.useState(false);
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   const [firstName, setFirstName] = useState("");
@@ -73,17 +60,6 @@ const RequestInfo = () => {
   const [ban, setBan] = useState("");
   const [isSubmit, setIsSubmit] = React.useState(false);
 
-  const handleChange2 = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(typeof value === "string" ? value.split(",") : value);
-  };
-
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
-
   function onChange(value) {
     console.log("Captcha value:", value);
   }
@@ -96,10 +72,7 @@ const RequestInfo = () => {
     const {
       target: { value },
     } = event;
-    setServicePlan(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    setServicePlan(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -241,42 +214,6 @@ const RequestInfo = () => {
         </Grid>
 
         <Grid item xs={6}>
-          {/* <FormControl sx={{ width: 640 }} error={servicePlan.length === 0}>
-            <InputLabel id="demo-multiple-checkbox-label">
-              Service Plan *
-            </InputLabel>
-            <Select
-              labelId="demo-multiple-checkbox-label"
-              id="demo-multiple-checkbox"
-              required
-              multiple
-              // onChange={handleChange1}
-              input={<OutlinedInput label="Service Plan" />}
-              MenuProps={MenuProps}
-              value={servicePlan}
-              onChange={(event) => {
-                setServicePlan(event.target.value);
-              }}
-            >
-              {names.map((name) => (
-                <MenuItem
-                  key={name}
-                  value={name}
-                  style={getStyles(name, personName, theme)}
-                >
-                  {name}
-                </MenuItem>
-              ))}
-            </Select>
-            {servicePlan.length === 0 ? (
-              <FormHelperText>This field is required!</FormHelperText>
-            ) : (
-              ""
-            )}
-          </FormControl> */}
-
-          {/* error={servicePlan.length === 0} */}
-
           <FormControl
             sx={{ width: 640 }}
             error={servicePlan.length === 0 && isSubmit === true}
@@ -401,7 +338,6 @@ const RequestInfo = () => {
               ""
             )}
           </FormControl>
-
         </Grid>
 
         <Grid item xs={6}>
@@ -418,7 +354,6 @@ const RequestInfo = () => {
               ban === "" && isSubmit === true ? "This field is required!" : " "
             }
           />
-
         </Grid>
 
         <Grid item xs={12}>
@@ -452,14 +387,14 @@ const RequestInfo = () => {
         </Grid>
         <Grid item xs={12} className="quote-button">
           <p>
-            We are commited to protect your{" "}
+            We are commited to protect your
             <a
               className="privacy"
               href="https://www.zdnet.com/article/best-browser-for-privacy/"
               target="_blank"
             >
               privacy
-            </a>{" "}
+            </a>
           </p>
         </Grid>
       </Grid>

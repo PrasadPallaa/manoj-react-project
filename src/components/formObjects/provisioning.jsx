@@ -9,28 +9,34 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 
 const steps = [
   {
-    label: "",
+    label: "Test 1",
     description: `Perform facility check on address.`,
+  },
+  {
+    label: "Test 2",
+    description: "Create a Service Order.",
   },
 ];
 
-export default function Test1Form({ childToParent1 }) {
+export default function ProvisioningForm({ childToParent3 }) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [lName, setLastName] = React.useState("");
   const [fName, setFirstName] = React.useState("");
-  const [address, setAddress] = React.useState("");
+  const [product, setProduct] = React.useState("");
+  const [description, setDescription] = React.useState("");
 
   function _renderStepContent(step) {
     switch (step) {
       case 0:
         return (
           <React.Fragment>
+            <Typography variant="h6" gutterBottom>
+              Sample Form 5
+            </Typography>
+
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12}>
                 <TextField
@@ -59,32 +65,43 @@ export default function Test1Form({ childToParent1 }) {
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>
+            </Grid>
+          </React.Fragment>
+        );
+      case 1:
+        return (
+          <React.Fragment>
+            <Typography variant="h6" gutterBottom>
+              Sample Form 6
+            </Typography>
+
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  required
+                  id="product"
+                  name="product"
+                  label="Product"
+                  fullWidth
+                  autoComplete="given-name"
+                  variant="standard"
+                  value={product}
+                  onChange={(e) => setProduct(e.target.value)}
+                />
+              </Grid>
 
               <Grid item xs={12} sm={12}>
-                <Paper
-                  component="form"
-                  sx={{
-                    p: "2px 4px",
-                    display: "flex",
-                    alignItems: "center",
-                    width: 400,
-                  }}
-                >
-                  <InputBase
-                    sx={{ ml: 1, flex: 1 }}
-                    placeholder="Business Street Address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    inputProps={{ "aria-label": "business street address" }}
-                  />
-                  <IconButton
-                    type="submit"
-                    sx={{ p: "10px" }}
-                    aria-label="search"
-                  >
-                    <SearchIcon />
-                  </IconButton>
-                </Paper>
+                <TextField
+                  required
+                  id="description"
+                  name="description"
+                  label="Description"
+                  fullWidth
+                  autoComplete="given-name"
+                  variant="standard"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
               </Grid>
             </Grid>
           </React.Fragment>
@@ -101,15 +118,23 @@ export default function Test1Form({ childToParent1 }) {
     const form1Data = {
       fName: fName,
       lName: lName,
-      address: address,
     };
 
-    let arr = [form1Data];
+    const form2Data = {
+      product: product,
+      description: description,
+    };
+
+    let arr = [form1Data, form2Data];
 
     setData(arr);
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    childToParent1(arr);
+    childToParent3(arr);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const handleReset = () => {
@@ -136,16 +161,15 @@ export default function Test1Form({ childToParent1 }) {
                     onClick={handleNext}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    Finish
-                    {/* {index === steps.length - 1 ? "Finish" : "Next"} */}
+                    {index === steps.length - 1 ? "Finish" : "Next"}
                   </Button>
-                  {/* <Button
+                  <Button
                     disabled={index === 0}
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
                   >
                     Back
-                  </Button> */}
+                  </Button>
                 </div>
               </Box>
             </StepContent>

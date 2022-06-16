@@ -1,3 +1,13 @@
 export const SET_STEPS = 'SET_STEPS';
 export const INCREMENT_CURRENT_STEP = 'INCREMENT_CURRENT_STEP';
 export const DECREMENT_CURRENT_STEP = 'DECREMENT_CURRENT_STEP';
+export const FACILITY_CHECK = 'Facility check';
+export const FACILITY_CHECK_ADDRESS = 'Perform facility check on address.';
+export const QUOTE = 'Quote';
+export const SERVICE_ORDER = 'Create a Service Order.';
+export const PROVISIONING = 'Provisioning';
+export const PROVISIONING_E2E = 'E2E Service provisioning.';
+export const DISPATCH = 'Dispatch';
+export const DISPATCH_TECHNICIAN = 'Technician Dispatch.';
+export const ACTIVATION = 'Activation';
+export const DEVICE_ACTIVATION = 'Device Activation.';

@@ -1,6 +1,5 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -20,14 +19,12 @@ const steps = [
   },
 ];
 
-export default function Test2Form({ childToParent2 }) {
+export default function QuoteForm({ childToParent2 }) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [isPlanATrue, setPlanATrue] = React.useState(false);
   const [isPlanBTrue, setPlanBTrue] = React.useState(false);
   const [isPlanCTrue, setPlanCTrue] = React.useState(false);
   const [isPlanDTrue, setPlanDTrue] = React.useState(false);
-  const [lName, setLastName] = React.useState("");
-  const [fName, setFirstName] = React.useState("");
 
   function _renderStepContent(step) {
     switch (step) {

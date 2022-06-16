@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import brspdlogo from "../images/Branding/01 Logo/Logo/Full Color/Digital/Brightspeed_Logo_Full_Color_RGB_864px@72ppi.png";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -24,10 +23,8 @@ import Select from "@mui/material/Select";
 import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
-import twitter from "../images/Branding/logos_2/twitter_1.png";
-import fb from "../images/Branding/logos_2/fb.png";
-import linkedIn from "../images/Branding/logos_2/linkedIn.png";
-import Layout from './Layout';
+import Layout from "./Layout";
+import Footer from "../pages/footer";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -120,8 +117,8 @@ const rows = [
     "Tech M",
     "Business Cloud Computing",
     "chaithanya@techm.com",
-    24,
-    4.0
+    "New",
+    "John"
   ),
   createData(
     "ManojKumar234",
@@ -129,8 +126,8 @@ const rows = [
     "IBM",
     "SIP Trunk",
     "chaithanya@techm.com",
-    24,
-    4.0
+    "New",
+    "John"
   ),
   createData(
     "ManojKumar234",
@@ -138,8 +135,8 @@ const rows = [
     "JP Morgan",
     "Business Lines",
     "chaithanya@techm.com",
-    24,
-    4.0
+    "New",
+    "John"
   ),
 ];
 
@@ -155,6 +152,7 @@ const Lead = () => {
   const [zip, setZip] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [comments, setComments] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [servicePlan, setServicePlan] = useState([]);
   const [noOfUsers, setNoOfUser] = useState("");
@@ -167,6 +165,7 @@ const Lead = () => {
   const [ban, setBan] = useState("");
   const [isSubmit, setIsSubmit] = React.useState(false);
   const [isNewClicked, setIsNewClicked] = React.useState(false);
+  const [isEditClicked, setIsEditClicked] = React.useState(false);
   const [hideLeadtabelData, setHideLeadTableData] = React.useState(false);
 
   const handleChange = (event, newValue) => {
@@ -179,12 +178,31 @@ const Lead = () => {
     },
   });
 
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
-
   const onSubmit = () => {
+    setLeadId("manojsde2343");
+    if (
+      !email ||
+      !firstName ||
+      !lastName ||
+      !address ||
+      !stateValue ||
+      !zip ||
+      !phoneNumber ||
+      !companyName ||
+      !servicePlan.length ||
+      !noOfUsers ||
+      !internetService.length ||
+      !leadStatus ||
+      !leadOwner.length ||
+      !callStatus.length ||
+      !ban
+    ) {
+      setIsSubmit(true);
+      return;
+    }
     setIsSubmit(true);
+    setIsEditClicked(true);
+    setIsNewClicked(false);
   };
 
   const onClickNew = () => {
@@ -192,40 +210,50 @@ const Lead = () => {
     setHideLeadTableData(true);
   };
 
+  const editClicked = () => {
+    setIsNewClicked(true);
+    setIsEditClicked(false);
+  };
+
   const onClickCancel = () => {
     setIsNewClicked(false);
     setHideLeadTableData(false);
+    setAddress("");
+    setBan("");
+    setCallStatus([]);
+    setComments("");
+    setCompanyName("");
+    setEmail("");
+    setFirstName("");
+    setInternetService([]);
+    setLastName("");
+    setLeadId("");
+    setLeadOwner([]);
+    setPhoneNumber("");
+    setStateValue("");
+    setZip("");
+    setNoOfUser("");
+    setServicePlan([]);
   };
 
   const handleChange1 = (event) => {
     const {
       target: { value },
     } = event;
-    setServicePlan(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    setServicePlan(typeof value === "string" ? value.split(",") : value);
   };
 
   const classes = useStyles();
-
-  const pathname = window.location.pathname;
-  console.log(pathname);
 
   return (
     <React.Fragment>
       <Layout />
       <Grid container spacing={2}>
-        <Grid item xs={5}>
-          {/* <img src={brspdlogo} alt="logo" className="img-brightspeed-login" /> */}
-        </Grid>
+        <Grid item xs={5}></Grid>
         <Grid item xs={4}>
           <h1 className="sales-porttal-heading">Sales Order Portal</h1>
         </Grid>
-        <Grid item xs={3} className="logged-in-user-settings">
-          {/* <h5 className="loggedin-user">Chaithanya Nimmala</h5>
-          <img src={SettingIcon} className="setting-icon" /> */}
-        </Grid>
+        <Grid item xs={3} className="logged-in-user-settings"></Grid>
       </Grid>
 
       <div className="tab-panle-sales-portal">
@@ -323,22 +351,12 @@ const Lead = () => {
                                   <TableCell component="th" scope="row">
                                     {row.name}
                                   </TableCell>
-                                  <TableCell>
-                                    {row.calories}
-                                  </TableCell>
+                                  <TableCell>{row.calories}</TableCell>
                                   <TableCell>{row.fat}</TableCell>
-                                  <TableCell>
-                                    {row.carbs}
-                                  </TableCell>
-                                  <TableCell>
-                                    {row.protein}
-                                  </TableCell>
-                                  <TableCell>
-                                    {row.leadStatus}
-                                  </TableCell>
-                                  <TableCell>
-                                    {row.leadOwner}
-                                  </TableCell>
+                                  <TableCell>{row.carbs}</TableCell>
+                                  <TableCell>{row.protein}</TableCell>
+                                  <TableCell>{row.leadStatus}</TableCell>
+                                  <TableCell>{row.leadOwner}</TableCell>
                                 </TableRow>
                               ))}
                             </TableBody>
@@ -638,6 +656,8 @@ const Lead = () => {
                         multiline
                         rows={2}
                         variant="outlined"
+                        value={comments}
+                        onChange={(event) => setComments(event.target.value)}
                       />
                     </Grid>
 
@@ -752,6 +772,115 @@ const Lead = () => {
                     </Grid>
                   </Grid>
                 )}
+
+                {isEditClicked && isSubmit && (
+                  <Grid
+                    container
+                    spacing={2}
+                    className="sales-order-form-entered-data"
+                  >
+                    <Grid item xs={12} className="quote-button">
+                      <Button
+                        className="sales-order-button-save-edit"
+                        onClick={editClicked}
+                      >
+                        Edit
+                      </Button>
+                    </Grid>
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Lead Id*: </label> <p>{leadId}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Lead Owner*:</label>
+                      <p>{leadOwner}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Lead Status*:</label>
+                      <p>{leadStatus}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Service Plan*:</label>
+                      <p>{servicePlan}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Email Id*:</label>
+                      <p>{email}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Number of users*:</label>
+                      <p>{noOfUsers}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>First Name*:</label>
+                      <p>{firstName}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>
+                        Do you currently have <br /> brightspeed internet
+                        service ? *:
+                      </label>
+                      <p>{internetService}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Last Name*:</label>
+                      <p>{lastName}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>
+                        Billing account <br /> number (BAN)*:
+                      </label>
+                      <p>{ban}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Phone Number*:</label>
+                      <p>{phoneNumber}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Comments:</label>
+                      <p>{comments}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Company *:</label>
+                      <p>{companyName}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Call Status *:</label>
+                      <p>{callStatus}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Address *:</label>
+                      <p>{address}</p>
+                    </Grid>
+
+                    <Grid item xs={6}></Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>State *:</label>
+                      <p>{stateValue}</p>
+                    </Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data"></Grid>
+
+                    <Grid item xs={6} className="sales-order-form-data">
+                      <label>Zip Code *:</label>
+                      <p>{zip}</p>
+                    </Grid>
+                  </Grid>
+                )}
               </TabPanel>
               <TabPanel value={value} index={1}>
                 Quote
@@ -766,65 +895,9 @@ const Lead = () => {
           </Grid>
         </Grid>
       </div>
-
-      <Grid container spacing={2} className="about-brightspeed sales-order-portal">
-          <Grid item xs={12} sm={6} lg={4}>
-            <ul className="list-customers">
-              <strong>
-                <li className="header-list">For Customers</li>
-              </strong>
-              <li>Customers With Disablities</li>
-              <li>Support</li>
-            </ul>
-          </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
-            <ul className="list-customers-carrers">
-              <strong>
-                <li className="header-list">About Brightspeed</li>
-              </strong>
-              <li>Careers</li>
-              <li>Newsroom</li>
-              <li>Contact Us</li>
-              <li>Wholesale</li>
-              <li>Partner Program</li>
-            </ul>
-          </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
-            <div  className="brightspeed-footer-content">
-            <div className="social-icons">
-              <img
-                src={brspdlogo}
-                alt="logo"
-                width="70%"
-                className="img-brightspeed"
-              />
-              <h5 className="follow-us">FOLLOW US</h5>
-              <img alt="twitter" src={twitter} className="logo-social" />
-              <img alt="fb" src={fb} className="logo-social" />
-              <img alt="linkedIn" src={linkedIn} className="logo-social" />
-            </div>
-
-            <div className="rights-content">
-              <p className="font-size-copyright">
-                <span>&#169;</span> 2022 Brightspeed. All rights reserved.
-              </p>
-              <p className="font-size-copyright-data">
-                {" "}
-                <strong>Legal Notices |</strong>{" "}
-                <strong>Privacy Policy |</strong>{" "}
-                <strong>Cookie Settings</strong>{" "}
-              </p>
-
-              <ul className="font-size-copyright-notices">
-                <li>Legal Notices</li>
-                <li>Privacy Policy</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-            </div>  
-
-          </Grid>
-        </Grid> 
+      <div className="sales-order-portal">
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };

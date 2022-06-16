@@ -7,35 +7,36 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import Test1Form from "../../components/formObjects/test1";
-import Test2Form from "../../components/formObjects/test2";
-import Test3Form from "../../components/formObjects/test3";
-import Test4Form from "../../components/formObjects/test4";
-import Test5Form from "../../components/formObjects/test5";
+import FacilityCheckForm from "../../components/formObjects/facilityCheck";
+import QuoteForm from "../formObjects/quote";
+import ProvisioningForm from "../formObjects/provisioning";
+import DispatchForm from "../formObjects/dispatch";
+import ActivationForm from "../formObjects/activation";
 import checkoutFormModel from "../../components/formModel/checkoutFormModel";
 import Alert from "@mui/material/Alert";
-
+import * as enterprise from "../../components/constants/constants";
+import Layout from "../../pages/Layout";
 
 const steps = [
   {
-    label: "Facility check",
-    description: `Perform facility check on address.`,
+    label: enterprise.FACILITY_CHECK,
+    description: enterprise.FACILITY_CHECK_ADDRESS,
   },
   {
-    label: "Quote",
-    description: "Create a Service Order.",
+    label: enterprise.QUOTE,
+    description: enterprise.SERVICE_ORDER,
   },
   {
-    label: "Provisioning",
-    description: "E2E Service provisioning.",
+    label: enterprise.PROVISIONING,
+    description: enterprise.PROVISIONING_E2E,
   },
   {
-    label: "Dispatch",
-    description: `Technician Dispatch.`,
+    label: enterprise.DISPATCH,
+    description: enterprise.DISPATCH_TECHNICIAN,
   },
   {
-    label: "Activation",
-    description: `Device Activation.`,
+    label: enterprise.ACTIVATION,
+    description: enterprise.DEVICE_ACTIVATION,
   },
 ];
 
@@ -67,31 +68,28 @@ export default function Enterprisevoice() {
     setData4(childdata4);
   };
 
-
   let arr = [...data1, ...data2, ...data3, ...data4];
 
   function _renderStepContent(step) {
     switch (step) {
       case 0:
         return (
-          <Test1Form formField={formField} childToParent1={childToParent1} />
+          <FacilityCheckForm formField={formField} childToParent1={childToParent1} />
         );
       case 1:
         return (
-          <Test2Form formField={formField} childToParent2={childToParent2} />
+          <QuoteForm formField={formField} childToParent2={childToParent2} />
         );
       case 2:
         return (
-          <Test3Form formField={formField} childToParent3={childToParent3} />
+          <ProvisioningForm formField={formField} childToParent3={childToParent3} />
         );
       case 3:
         return (
-          <Test4Form formField={formField} childToParent4={childToParent4} />
+          <DispatchForm formField={formField} childToParent4={childToParent4} />
         );
       case 4:
-        return (
-          <Test5Form formField={formField} dataParentToChild = {arr} />
-        );
+        return <ActivationForm formField={formField} dataParentToChild={arr} />;
       default:
         return <div>Not Found</div>;
     }
@@ -101,7 +99,6 @@ export default function Enterprisevoice() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     if (activeStep == 4) {
       setSuccess(true);
-      console.log(arr);
 
       setTimeout(() => {
         setSuccess(false);
@@ -119,6 +116,7 @@ export default function Enterprisevoice() {
 
   return (
     <React.Fragment>
+      <Layout />
       {success && (
         <Alert
           onClose={() => {

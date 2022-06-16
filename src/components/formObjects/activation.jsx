@@ -9,7 +9,7 @@ const steps = [
   },
 ];
 
-export default function Test5Form({ dataParentToChild }) {
+export default function ActivationForm({ dataParentToChild }) {
   return (
     <React.Fragment>
         <Card>

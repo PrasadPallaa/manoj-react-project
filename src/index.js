@@ -10,15 +10,13 @@ import Enterprisevoice from "./components/enterprise/enterprisevoice";
 import Productctlg from "./components/enterprise/productctlg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MidEnterprise from "./pages/MidEnterprise";
-import Navbar from "./components/navbar";
 import WholeSale from "./components/wholesale/wholesale";
 import Voice from "./components/enterprise/voice";
 import Login from "./components/login/login";
 import Lead from "./pages/leadPage";
 
-export default function App(props) {
+export default function App() {
   const pathname = window.location.pathname;
-  console.log(pathname);
   return (
     <>
       <BrowserRouter>

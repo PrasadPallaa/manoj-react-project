@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider';
 
 export default function Enterprisemenu() {
   return (
+    <>
     <List
       sx={{
         width: '100%',
@@ -45,6 +46,6 @@ export default function Enterprisemenu() {
         <ListItemText primary="Hybrid & Cloud" secondary="Hybrid" />
       </ListItem>
     </List>
-    
+    </>
   );
 }
