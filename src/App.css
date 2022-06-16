@@ -1453,12 +1453,12 @@ a {
 }
 
 .sales-order-form-data {
-  display: flex !important;
-  justify-content: flex-end !important;
+  /* display: flex !important;
+  justify-content: flex-end !important; */
 }
 
 .sales-order-form-entered-data {
-  margin-left: -25% !important;
+  /* margin-left: -25% !important; */
 }
 
 .sales-order-button-save-edit {
@@ -1469,5 +1469,9 @@ a {
   background-color: #ffc800 !important;
   text-transform: none !important;
   margin: 5px !important;
-  margin-left: 44% !important;
+}
+
+.label-alignment {
+  display: flex;
+  justify-content: flex-end;
 }

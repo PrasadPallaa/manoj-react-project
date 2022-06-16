@@ -218,6 +218,7 @@ const Lead = () => {
   const onClickCancel = () => {
     setIsNewClicked(false);
     setHideLeadTableData(false);
+    setIsSubmit(false);
     setAddress("");
     setBan("");
     setCallStatus([]);
@@ -788,96 +789,229 @@ const Lead = () => {
                       </Button>
                     </Grid>
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Lead Id*: </label> <p>{leadId}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          <label>Lead Id*: </label>
+                        </div>
+                        <div className="col-6">
+                          <p>{leadId}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Lead Owner*:</label>
-                      <p>{leadOwner}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          <label>Lead Owner*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{leadOwner}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Lead Status*:</label>
-                      <p>{leadStatus}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          <label>Lead Status*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{leadStatus}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Service Plan*:</label>
-                      <p>{servicePlan}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Service Plan*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{servicePlan}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Email Id*:</label>
-                      <p>{email}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Email Id*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{email}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Number of users*:</label>
-                      <p>{noOfUsers}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Number of users*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{noOfUsers}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>First Name*:</label>
-                      <p>{firstName}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>First Name*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{firstName}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>
-                        Do you currently have <br /> brightspeed internet
-                        service ? *:
-                      </label>
-                      <p>{internetService}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>
+                            Do you currently have <br /> brightspeed internet
+                            service ? *:
+                          </label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p className="mt-4">{internetService}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Last Name*:</label>
-                      <p>{lastName}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Last Name*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{lastName}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>
-                        Billing account <br /> number (BAN)*:
-                      </label>
-                      <p>{ban}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>
+                            Billing account <br /> number (BAN)*:
+                          </label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p className="mt-4">{ban}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Phone Number*:</label>
-                      <p>{phoneNumber}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Phone Number*:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{phoneNumber}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Comments:</label>
-                      <p>{comments}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Comments:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{comments}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Company *:</label>
-                      <p>{companyName}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Company *:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{companyName}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Call Status *:</label>
-                      <p>{callStatus}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Call Status *:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{callStatus}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Address *:</label>
-                      <p>{address}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Address *:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{address}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6}></Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>State *:</label>
-                      <p>{stateValue}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>State *:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{stateValue}</p>
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={6} className="sales-order-form-data"></Grid>
 
                     <Grid item xs={6} className="sales-order-form-data">
-                      <label>Zip Code *:</label>
-                      <p>{zip}</p>
+                      <div className="row">
+                        <div className="col-6 label-alignment">
+                          {" "}
+                          <label>Zip Code *:</label>
+                        </div>
+                        <div className="col-6">
+                          {" "}
+                          <p>{zip}</p>
+                        </div>
+                      </div>
                     </Grid>
                   </Grid>
                 )}
