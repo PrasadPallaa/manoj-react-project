@@ -48,7 +48,6 @@ const StyledMenu = styled.nav`
 
 const Menu = ({ open }) => {
   const pathname = window.location.pathname;
-  console.log(pathname);
   return (
     <StyledMenu open={open}>
       <a href="/">
@@ -132,6 +131,7 @@ const StyledBurger = styled.button`
     }
   }
 `;
+
 const Burger = ({ open, setOpen }) => {
   return (
     <StyledBurger open={open} onClick={() => setOpen(!open)}>

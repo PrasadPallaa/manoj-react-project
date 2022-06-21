@@ -99,15 +99,23 @@ function a11yProps(index) {
 }
 
 function createData(
-  name,
-  calories,
-  fat,
-  carbs,
-  protein,
+  leadId,
+  customerName,
+  legalEntityName,
+  product,
+  email,
   leadStatus,
   leadOwner
 ) {
-  return { name, calories, fat, carbs, protein, leadStatus, leadOwner };
+  return {
+    leadId,
+    customerName,
+    legalEntityName,
+    product,
+    email,
+    leadStatus,
+    leadOwner,
+  };
 }
 
 const rows = [
@@ -205,9 +213,34 @@ const Lead = () => {
     setIsNewClicked(false);
   };
 
+  const onLeadIdClick = (row) => {
+    setHideLeadTableData(true);
+    setIsNewClicked(true);
+    setIsEditClicked(false);
+    setBan("123456");
+    setLeadId(row.leadId);
+    setFirstName(row.customerName.split(" ")[0]);
+    setLastName(row.customerName.split(" ")[1]);
+    setEmail(row.email);
+    setLeadOwner(row.leadOwner);
+    setLeadStatus(row.leadStatus);
+    setServicePlan(row.product ? row.product.split(",") : "");
+    setPhoneNumber("(555) 555-1234");
+    setCompanyName(row.legalEntityName);
+    setAddress("Mr John Smith. 132, My Street, Kingston");
+    setStateValue("New York ");
+    setZip("12401");
+    setNoOfUser("255");
+    setInternetService("Yes");
+    setComments("Comments");
+    setCallStatus("Open");
+    console.log("Clicked", row);
+  };
+
   const onClickNew = () => {
     setIsNewClicked(true);
     setHideLeadTableData(true);
+    setLeadId("ManojKumar234");
   };
 
   const editClicked = () => {
@@ -349,13 +382,17 @@ const Lead = () => {
                                     },
                                   }}
                                 >
-                                  <TableCell component="th" scope="row">
-                                    {row.name}
+                                  <TableCell
+                                    component="th"
+                                    scope="row"
+                                    onClick={() => onLeadIdClick(row)}
+                                  >
+                                    {row.leadId}
                                   </TableCell>
-                                  <TableCell>{row.calories}</TableCell>
-                                  <TableCell>{row.fat}</TableCell>
-                                  <TableCell>{row.carbs}</TableCell>
-                                  <TableCell>{row.protein}</TableCell>
+                                  <TableCell>{row.customerName}</TableCell>
+                                  <TableCell>{row.legalEntityName}</TableCell>
+                                  <TableCell>{row.product}</TableCell>
+                                  <TableCell>{row.email}</TableCell>
                                   <TableCell>{row.leadStatus}</TableCell>
                                   <TableCell>{row.leadOwner}</TableCell>
                                 </TableRow>
@@ -386,7 +423,7 @@ const Lead = () => {
                     </Grid>
 
                     <Grid item xs={6}>
-                      <label>Lead Id*:</label>
+                      <label>Lead Id*: {leadId}</label>
                     </Grid>
 
                     <Grid item xs={6}>

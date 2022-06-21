@@ -62,7 +62,7 @@
 }
 
 .css-18k87ye-MuiTypography-root {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica";
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
@@ -224,7 +224,7 @@
   .content-1 {
     font-size: 33px;
     padding: 2rem;
-    font-family: fangsong;
+    font-family: Helvetica;
   }
 }
 
@@ -232,14 +232,14 @@
   .content-1 {
     font-size: 20px;
     padding: 1rem;
-    font-family: fangsong;
+    font-family: Helvetica;
     margin-top: 13rem;
   }
 }
 
 @media screen and (min-width: 601px) {
   .network-sol {
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     margin-left: 3rem;
   }
@@ -247,7 +247,7 @@
 
 @media screen and (max-width: 600px) {
   .network-sol {
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     margin-left: 1rem;
     font-size: 28px;
@@ -404,7 +404,7 @@
 @media screen and (min-width: 601px) {
   .voice-sol {
     margin-top: 5rem;
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     margin-left: 3rem;
   }
@@ -413,7 +413,7 @@
 @media screen and (max-width: 600px) {
   .voice-sol {
     margin-top: 2rem;
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     margin-left: 1rem;
     font-size: 28px;
@@ -616,7 +616,7 @@
 .header-list {
   font-weight: 800;
   font-size: 19px;
-  font-family: inherit;
+  font-family: Helvetica;
 }
 
 @media screen and (min-width: 601px) {
@@ -652,7 +652,7 @@
 li {
   margin-top: 18px;
   font-size: 18px;
-  font-family: inherit;
+  font-family: Helvetica;
   font-weight: 500;
 }
 
@@ -789,7 +789,7 @@ li {
   list-style: none;
   cursor: pointer;
   font-size: 24px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Helvetica";
 }
 
 .myDIV:hover + .hide {
@@ -864,13 +864,13 @@ li {
   font-size: 27px;
   font-weight: bold;
   color: #fff;
-  font-family: system-ui;
+  font-family: Helvetica;
   letter-spacing: 1.7px;
 }
 
 @media screen and (min-width: 601px) {
   .voip-product {
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -880,7 +880,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .voip-product {
-    font-family: revert;
+    font-family: Helvetica;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -890,7 +890,7 @@ li {
 
 @media screen and (min-width: 601px) {
   .voip-services {
-    font-family: ui-monospace;
+    font-family: Helvetica;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
@@ -900,7 +900,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .voip-services {
-    font-family: ui-monospace;
+    font-family: Helvetica;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
@@ -948,7 +948,7 @@ li {
 .list-item-backside {
   font-size: 20px;
   color: #fff;
-  font-family: system-ui;
+  font-family: Helvetica;
 }
 
 .toolbar-header {
@@ -1033,7 +1033,7 @@ li {
   display: flex;
   justify-content: center;
   font-size: 44px;
-  font-family: auto;
+  font-family: Helvetica;
 }
 
 .speakToSales-contact {
@@ -1058,7 +1058,7 @@ li {
 }
 
 .req-info-title {
-  font-family: system-ui;
+  font-family: Helvetica;
   font-size: 40px;
 }
 
@@ -1339,7 +1339,7 @@ a {
 
 .sales-porttal-heading {
   margin: 1rem;
-  font-family: serif;
+  font-family: Helvetica;
 }
 
 .tab-panle-sales-portal {
@@ -1450,15 +1450,6 @@ a {
 
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
   padding: 12.5px 14px !important;
-}
-
-.sales-order-form-data {
-  /* display: flex !important;
-  justify-content: flex-end !important; */
-}
-
-.sales-order-form-entered-data {
-  /* margin-left: -25% !important; */
 }
 
 .sales-order-button-save-edit {

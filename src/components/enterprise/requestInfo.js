@@ -61,7 +61,7 @@ const RequestInfo = () => {
   const [isSubmit, setIsSubmit] = React.useState(false);
 
   function onChange(value) {
-    console.log("Captcha value:", value);
+    // console.log("Captcha value:", value);
   }
 
   const onSubmit = () => {
