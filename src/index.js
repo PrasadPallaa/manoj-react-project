@@ -13,10 +13,9 @@ import MidEnterprise from "./pages/MidEnterprise";
 import WholeSale from "./components/wholesale/wholesale";
 import Voice from "./components/enterprise/voice";
 import Login from "./components/login/login";
-import Lead from "./pages/leadPage";
+import SalesOrderPortal from "./pages/SalesOrderPortal";
 
 export default function App() {
-  const pathname = window.location.pathname;
   return (
     <>
       <BrowserRouter>
@@ -24,7 +23,7 @@ export default function App() {
           <Route path="/" element={<Layout />} />
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
-          <Route path="home/lead" element={<Lead />} />
+          <Route path="home/lead" element={<SalesOrderPortal />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="companyheader" element={<CompanyHeader />} />
